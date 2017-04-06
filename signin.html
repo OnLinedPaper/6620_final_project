@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--define the document type-->
+
+<html>
+    <head>
+    <title>MeTube Signin</title>
+    <!--the title on the tab-->
+    </head>
+
+    <body>
+        <center>
+        <br><br><br>
+        <!--center the signing box and put three breaks so it doesn't appear
+            right at the top of the page-->
+
+        <fieldset>
+            <legend><h1>Sign In</h1></legend>
+            <!--make a box - its title is Sign In-->
+
+            <form action="helloworld.php" method="post">
+                <!--this form contains the bulk of our interface for now.
+                    it gets the username, email, and password, and sends them
+                    to "helloworld.php" (this name will be changed later)-->
+                Username:<br>
+            	<input type="text" name="uname"><br>
+                Email:<br>
+            	<input type="email" name="email"><br>
+                Password:<br>
+            	<input type="password" name="pword"><br><br>
+                <input type="submit" value="Sign in">
+
+        </fieldset>
+
+        </center>
+    </form>
+    </body>
+</html>
