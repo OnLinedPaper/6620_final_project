@@ -10,13 +10,18 @@
         $servername = "mysql1.cs.clemson.edu";
         $username = "metube_8ma5";
         $password = "metube6620";
+        $database = "metube_w1bj";
 
-        $conn = mysqli_connect($servername, $username, $password);
-        if(!$conn){
+        $link = mysqli_connect($servername, $username, $password, $database);
+        if(!$link){
             die("connection failed");
         }
 
-    echo "connected.";
+    echo "\n\nconnected.";
+
+
+
+    mysqli_close($link)
 
     ?>
 
