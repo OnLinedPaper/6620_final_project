@@ -20,12 +20,13 @@
             die("connection failed");
         }
 
-    echo "<br>connected.";
+    echo "<br><br>connected.";
 
     $query = "SELECT * FROM account";
     #a sample query
 
     $result = mysqli_query($link, $query) or die("query failed");
+    echo "<br><br>queried successfully."
 
     mysqli_close($link)
 
