@@ -6,5 +6,19 @@
     Entered password: <?php echo $_POST['pword']; ?>&nbsp
     <i>(This will not be visible in the final implementation)</i>
 
+    <?php
+        $servername = 'mysql1.cs.clemson.edu';
+        $username = 'metube_8ma5';
+        $password = 'metube6620';
+
+        $conn = mysqli_connect($servername, $username, $password);
+        if(!$conn){
+            die('connection failed');
+        }
+
+    echo 'connected.';
+
+    ?>
+
 </body>
 </html>
