@@ -8,18 +8,24 @@
 
     <?php
         $servername = "mysql1.cs.clemson.edu";
-        $username = "metube_8ma5FAKE";
+        $username = "metube_8ma5";
         $password = "metube6620";
         $database = "metube_w1bj";
+        #this data is all correct
 
         $link = mysqli_connect($servername, $username, $password, $database);
+        #connect to database
         if(!$link){
+            #if link does not exist, connection failed.
             die("connection failed");
         }
 
-    echo "\n\nconnected.";
+    echo "<br>connected.";
 
+    $query = "SELECT * FROM accounts";
+    #a sample query
 
+    $result = mysqli_query($link, $query) or die("query failed");
 
     mysqli_close($link)
 
