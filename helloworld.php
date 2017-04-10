@@ -22,7 +22,7 @@
 
     echo "<br>connected.";
 
-    $query = "SELECT * FROM accounts";
+    $query = "SELECT * FROM account";
     #a sample query
 
     $result = mysqli_query($link, $query) or die("query failed");
