@@ -26,9 +26,9 @@
     #a sample query
 
     $result = mysqli_query($link, $query) or die("query failed");
-    echo "<br><br>queried successfully."
+    echo "<br><br>queried successfully.";
 
-    mysqli_close($link)
+    mysqli_close($link);
 
     ?>
 
