@@ -8,7 +8,7 @@
 
     <?php
         $servername = "mysql1.cs.clemson.edu";
-        $username = "metube_8ma5";
+        $username = "metube_8ma5FAKE";
         $password = "metube6620";
         $database = "metube_w1bj";
 
