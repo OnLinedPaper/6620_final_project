@@ -86,6 +86,26 @@ function upload_error($result)
     }
 }
 
+function get_account_id_from_username($username)
+{
+    #takes a username, queries the database, and returns the account_id of that
+    #username as a string
+
+    $query = "select account_id from accoutn where username='$username'";
+    $result = mysql_query($query);
+    #send the query
+
+    if (!$result){
+        die ("get_account_id_from_username() failed. Could not query the database: <br />". mysql_error());
+    }
+
+    $row = mysql_fetch_assoc($result);
+    #get result
+
+    return (string)$row[0];
+    #return account_id, which should be the first part of the string
+}
+
 function other()
 {
     //You can write your own functions here.
