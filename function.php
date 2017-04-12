@@ -91,7 +91,7 @@ function get_account_id_from_username($username)
     #takes a username, queries the database, and returns the account_id of that
     #username as a string
 
-    $query = "select account_id from accoutn where username='$username'";
+    $query = "select account_id from account where username='$username'";
     $result = mysql_query($query);
     #send the query
 
