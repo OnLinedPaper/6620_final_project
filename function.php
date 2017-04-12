@@ -12,6 +12,10 @@ function user_exist_check ($username, $password, $email){
         $row = mysql_fetch_assoc($result);
         if($row == 0){
             $query = "insert into account (type, username, password, email) values (1,'$username','$password','$email')";
+            #account_id is automatically assigned and incremented
+            #type is type 1 by default
+            #username, password, and email are all set
+
             echo "insert query:" . $query;
             $insert = mysql_query( $query );
             if($insert)
@@ -39,7 +43,7 @@ function user_pass_check($username, $password)
     }
     else{
         $row = mysql_fetch_row($result);
-        if(strcmp($row[1],$password))
+        if(strcmp($row[3],$password))
             return 2; //wrong password
         else
             return 0; //Checked.
