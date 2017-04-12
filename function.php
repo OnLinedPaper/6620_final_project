@@ -105,7 +105,7 @@ function get_account_id_from_username($username)
 
     $row = mysql_fetch_assoc($result);
     #get result
-    echo $row."<br>";
+    echo $row['account_id']."<br>";
 
     return (string)$row[0];
     #return account_id, which should be the first part of the string
