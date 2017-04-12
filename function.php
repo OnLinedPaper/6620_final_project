@@ -107,7 +107,7 @@ function get_account_id_from_username($username)
     #get result
     echo $row['account_id']."<br>";
 
-    return (string)$row[0];
+    return (string)$row['account_id'];
     #return account_id, which should be the first part of the string
 }
 
