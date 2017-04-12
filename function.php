@@ -91,7 +91,7 @@ function get_account_id_from_username($username)
     #takes a username, queries the database, and returns the account_id of that
     #username as a string
 
-    $query = "select account_id from account where username='$username'";
+    $query = "select * from account where username='$username'";
     $result = mysql_query($query);
     #send the query
 
@@ -101,9 +101,9 @@ function get_account_id_from_username($username)
 
     $row = mysql_fetch_assoc($result);
     #get result
-    echo $row[0];
+    echo "'$row[0]'";
 
-    return (string)$row[0];
+    return "'(string)$row[0]'";
     #return account_id, which should be the first part of the string
 }
 
