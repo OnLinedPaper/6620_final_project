@@ -11,13 +11,13 @@ function user_exist_check ($username, $password, $email){
     else {
         $row = mysql_fetch_assoc($result);
         if($row == 0){
-            $query = "insert into account values (1,'$username','$password','$email')";
+            $query = "insert into account values (4, 1,'$username','$password','$email')";
             echo "insert query:" . $query;
             $insert = mysql_query( $query );
             if($insert)
                 return 1;
             else
-                die ("Could not insert into the database: <br />". mysql_error());
+                die ("<br><br>Could not insert into the database: <br />". mysql_error());
         }
         else{
             return 2;
