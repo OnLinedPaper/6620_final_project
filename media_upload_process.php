@@ -11,7 +11,7 @@ include_once "function.php";
 $username=$_SESSION['username'];
 $account_id=get_account_id_from_username($username);
 
-echo "'$account_id'";
+echo $account_id;
 
 //Create Directory if doesn't exist
 if(!file_exists('uploads/'))

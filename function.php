@@ -19,11 +19,13 @@ function user_exist_check ($username, $password, $email){
             echo "insert query:" . $query;
             $insert = mysql_query( $query );
             if($insert)
+            #success!
                 return 1;
             else
                 die ("<br><br>Could not insert into the database: <br />". mysql_error());
         }
         else{
+            #uname already exists
             return 2;
         }
     }
@@ -92,8 +94,10 @@ function get_account_id_from_username($username)
     #username as a string
 
     $query = "select * from account where username='$username'";
+    echo $query;
     $result = mysql_query($query);
     #send the query
+    echo $result;
 
     if (!$result){
         die ("get_account_id_from_username() failed. Could not query the database: <br />". mysql_error());
@@ -101,9 +105,9 @@ function get_account_id_from_username($username)
 
     $row = mysql_fetch_assoc($result);
     #get result
-    echo "'$row[0]'";
+    echo $row[0];
 
-    return "'(string)$row[0]'";
+    return (string)$row[0];
     #return account_id, which should be the first part of the string
 }
 
