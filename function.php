@@ -94,10 +94,10 @@ function get_account_id_from_username($username)
     #username as a string
 
     $query = "select * from account where username='$username'";
-    echo $query;
+    echo $query."<br>";
     $result = mysql_query($query);
     #send the query
-    echo $result;
+    echo $result."<br>";
 
     if (!$result){
         die ("get_account_id_from_username() failed. Could not query the database: <br />". mysql_error());
