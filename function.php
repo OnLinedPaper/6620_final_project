@@ -45,7 +45,7 @@ function user_pass_check($username, $password)
         $row = mysql_fetch_row($result);
         if(!$row[2])
             return 1; #username doesn't exist
-        if(strcmp($row[3],$password))
+        else if(strcmp($row[3],$password))
             return 2; //wrong password
         else
             return 0; //Checked.
