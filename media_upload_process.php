@@ -9,15 +9,19 @@ include_once "function.php";
 *******************************************************/
 
 $username=$_SESSION['username'];
+$account_id=$_SESSION['account_id'];
 
 
 //Create Directory if doesn't exist
 if(!file_exists('uploads/'))
     mkdir('uploads/', 0757);
+    #create the uploads folder if it does not already exist
+
 $dirfile = 'uploads/'.$username.'/';
 if(!file_exists($dirfile))
     mkdir($dirfile,0755);
     chmod( $dirfile,0755);
+    #make the individual user's upload folder
     if($_FILES["file"]["error"] > 0 )
     {     $result=$_FILES["file"]["error"];} //error from 1-4
     else
