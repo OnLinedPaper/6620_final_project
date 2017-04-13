@@ -60,9 +60,11 @@ function saveDownload(id)
                     ?>
             </td>
                         <td>
+                            <!--display file name-->
                             <a href="media.php?id=<?php echo $mediaid;?>" target="_blank"><?php echo $filename;?></a>
                         </td>
                         <td>
+                            <!--file download link-->
                             <a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
                         </td>
         </tr>
