@@ -47,7 +47,8 @@ function saveDownload(id)
     <div style="background:#339900;color:#FFFFFF; width:150px;">Uploaded Media</div>
     <table width="50%" cellpadding="0" cellspacing="0">
         <?php
-            while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path
+            while ($result_row = mysql_fetch_row($result))
+            #media_id, filename, type, path, last_access_time, account_id, ip, upload_time
             {
                 $mediaid = $result_row[0];
                 $filename = $result_row[1];
@@ -65,7 +66,7 @@ function saveDownload(id)
                         </td>
                         <td>
                             <!--file download link-->
-                            <a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
+                            <a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $filenpath;?>);">Download</a>
                         </td>
         </tr>
             <?php
