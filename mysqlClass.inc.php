@@ -15,7 +15,7 @@ class mysql_db {
 
         $this->dbname = $database;
 
-        $this->db_connect_id = mysql_connect($this->server, $this->user, $this->password);
+        $this->db_connect_id = mysqli_connect($this->server, $this->user, $this->password);
         if($this->db_connect_id) {
 
             if($database != "") {
