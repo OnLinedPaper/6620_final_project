@@ -5,6 +5,7 @@ include "mysqlClass.inc.php";
 function user_exist_check ($username, $password, $email){
     $query = "select * from account where username='$username'";
     $result = mysql_query( $query );
+    #account_id, type, username, password, email
     if (!$result){
         die ("user_exist_check() failed. Could not query the database: <br />". mysql_error());
     }
@@ -38,6 +39,7 @@ function user_pass_check($username, $password)
     $query = "select * from account where username='$username'";
     echo  $query;
     $result = mysql_query( $query );
+    #account_id, type, username, password, email
 
     if (!$result)
     {
@@ -97,6 +99,8 @@ function get_account_id_from_username($username)
     #echo $query."<br>";
     $result = mysql_query($query);
     #send the query
+    #account_id, type, username, password, email
+
     #echo $result."<br>";
 
     if (!$result){

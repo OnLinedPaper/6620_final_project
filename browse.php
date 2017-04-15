@@ -39,6 +39,7 @@ function saveDownload(id)
 
     $query = "SELECT * from media";
     $result = mysql_query( $query );
+    #media_id, name, type, path, last_access_time, account_id, ip, upload_time
     if (!$result){
        die ("Could not query the media table in the database: <br />". mysql_error());
     }
