@@ -62,12 +62,13 @@
             }
 
             $query = "UPDATE account SET username='".$new_username."', password='".$new_password."', email='".$new_email."' WHERE account_id=".$_SESSION['account_id']."";
-            echo $query;
             $result = mysql_query($query);
         }
     }
 
 ?>
+
+<a href="browse.php">Back to browse</a>
 
 <form action="update_profile.php" method="post">
     Username: <input type="text" name="username" value=<?php echo "\"".$curr_username."\""?>> <br>
