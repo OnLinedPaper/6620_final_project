@@ -28,6 +28,9 @@ function saveDownload(id)
         if(!isset($_SESSION['username']))
         {
             echo "uh-oh";
+            ?>
+            <meta http-equiv="refresh" content="0; url=http://webapp.cs.clemson.edu/~ndreed/metube/" />
+            <?php
         }
     ?>
 <p>Welcome <?php echo $_SESSION['username'];?></p>
