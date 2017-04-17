@@ -28,8 +28,10 @@ if(isset($_GET['id'])) {
     #expects type to be a string
     if(substr($type,0,5)=="image") //view image
     {
-        echo "Viewing Picture:";
+        echo "Viewing Picture:<br>";
+        echo "(uploaded on ";
         echo $result_row[4];
+        echo ")<br><br>";
         echo "<img src='".$filepath."'/>";
     }
     else //view movie
