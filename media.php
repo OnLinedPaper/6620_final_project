@@ -12,6 +12,17 @@
 </head>
 
 <body>
+    <?php
+    #this redirects the user if they are not signed in
+        if(!isset($_SESSION['username']))
+        {
+            echo "uh-oh, you aren't signed in!";
+            ?>
+            <meta http-equiv="refresh" content="0; url=http://webapp.cs.clemson.edu/~ndreed/metube/" />
+            <?php
+        }
+    ?>
+    
 <?php
 if(isset($_GET['id'])) {
     $query = "SELECT * FROM media WHERE media_id='".$_GET['id']."'";

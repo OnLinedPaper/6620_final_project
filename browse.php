@@ -25,9 +25,10 @@ function saveDownload(id)
 
 <body>
     <?php
+    #this redirects the user if they are not signed in
         if(!isset($_SESSION['username']))
         {
-            echo "uh-oh";
+            echo "uh-oh, you aren't signed in!";
             ?>
             <meta http-equiv="refresh" content="0; url=http://webapp.cs.clemson.edu/~ndreed/metube/" />
             <?php
