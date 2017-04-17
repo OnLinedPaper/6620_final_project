@@ -37,7 +37,7 @@
             echo "<br><b>New passwords don't match.</b><br>";
         }
         else{
-            if(!isset($_POST['password1'])) {
+            if($_POST['password1'] == "") {
                 #they didn't want to change their password
                 $new_password = $curr_password;
             }
@@ -45,7 +45,7 @@
                 $new_password = $_POST['password1'];
             }
 
-            if(!isset($POST['username'])) {
+            if($POST['username'] == "") {
                 #they didn't want to change their username
                 $new_username = $curr_username;
             }
@@ -53,7 +53,7 @@
                 $new_username = $_POST['username'];
             }
 
-            if(!isset($_POST['email'])) {
+            if($_POST['email'] == "") {
                 #they didn't want to change their email
                 $new_email = $curr_email;
             }
