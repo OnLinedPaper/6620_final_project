@@ -18,6 +18,13 @@ if(isset($_POST['submit'])) {
             }
             else if($check==0){
                 $_SESSION['username']=$_POST['username']; //Set the $_SESSION['username']
+
+                #set the $_SESSION['account_id']
+                $query = "SELECT account_id FROM account WHERE username='".$_SESSION['username']."'";
+                $result = mysql_query($query);
+                $result_row = mysql_fetch_row($result);
+                $_SESSION['account_id'] = $result_row[0];
+
                 header('Location: browse.php');
             }
         }
