@@ -16,6 +16,23 @@ Under construction
         <?php
     }
 
+    if(isset($_POST['submit']))
+    {
+        if($_POST['password1'] != $_POST['password2'])
+        {
+            #password match fail
+            echo "<br><b>Passwords don't match.</b><br>"
+        }
+        else{
+            $query = "UPDATE accounts SET username='".$_POST['username']."' password='".$_POST['password1']."' email='".$_POST['email']."' WHERE account_id = '".$_SESSION['account_id']."'";
+            $result = mysql_query($query);
+        }
+    }
+
+
+
+
+
     $query = "SELECT * FROM account WHERE account_id='".$_SESSION['account_id']."'";
     $result = mysql_query($query);
     $result_row = mysql_fetch_row($result);
@@ -25,5 +42,16 @@ Under construction
     $curr_password = $result_row[3];
     $curr_email = $result_row[4];
 ?>
+
+<form action="register.php" method="post">
+    Username: <input type="text" name="username"> <br>
+    Email: <input type="text" name="email"> <br>
+    Old Password: <input type="password" name="password_old"> <br>
+    New Password: <input  type="password" name="password1"> <br>
+    Repeat New password: <input type="password" name="password2"> <br>
+    <input name="submit" type="submit" value="Submit">
+</form>
+
+
 </body>
 </html>
