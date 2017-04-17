@@ -15,6 +15,7 @@
 <?php
 if(isset($_GET['id'])) {
     $query = "SELECT * FROM media WHERE mediaid='".$_GET['id']."'";
+    echo $query;
     $result = mysql_query( $query );
     #media_id, name, type, path, last_access_time, account_id, ip, upload_time
     $result_row = mysql_fetch_row($result);
