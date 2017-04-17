@@ -75,7 +75,7 @@ function saveDownload(id)
                         </td>
                         <td>
                             <!--file download link-->
-                            <a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $filenpath;?>);">Download</a>
+                            <a href="<?php echo $filenpath;?>" download">Download</a>
                         </td>
         </tr>
             <?php
