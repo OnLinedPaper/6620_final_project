@@ -34,6 +34,9 @@ function saveDownload(id)
             <?php
         }
     ?>
+
+<?php    $query = "SELECT account_id FROM account WHERE username='".$_POST['username']."'";
+    echo mysql_query($query); ?>
 <p>Welcome <?php echo $_SESSION['username'];?><br>
 <a href="update_profile.php">Update Profile</a>
 </p>
