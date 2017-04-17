@@ -37,6 +37,21 @@
             echo "<br><b>New passwords don't match.</b><br>";
         }
         else{
+            if(!isset($_POST['password1']))
+            {
+                #they didn't want to change their password
+                $_POST['password1'] = $curr_password;
+            }
+            if(!isset($POST['username']))
+            {
+                #they didn't want to change their username
+                $_POST['username'] = $curr_username;
+            }
+            if(!isset($_POST['email']))
+            {
+                #they didn't want to change their email
+                $_POST['email'] = $curr_email;
+            }
             $query = "UPDATE account SET username='".$_POST['username']."', password='".$_POST['password1']."', email='".$_POST['email']."' WHERE account_id=".$_SESSION['account_id']."";
             echo $query;
             $result = mysql_query($query);
@@ -48,9 +63,9 @@
 <form action="update_profile.php" method="post">
     Username: <input type="text" name="username" value=<?php echo "\"".$curr_username."\""?>> <br>
     Email: <input type="text" name="email" value=<?php echo "\"".$curr_email."\""?>> <br>
-    Old Password: <input type="password" name="password_old"> <br>
     New Password: <input  type="password" name="password1"> <br>
     Repeat New password: <input type="password" name="password2"> <br>
+    Old Password: <input type="password" name="password_old"> (REQUIRED)<br>
     <input name="submit" type="submit" value="Submit">
 </form>
 
