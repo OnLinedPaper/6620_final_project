@@ -21,7 +21,14 @@ if(isset($_GET['id'])) {
 
     //updateMediaTime($_GET['id']);
 
-    echo $result;
+    echo $result[0];
+    echo $result[1];
+    echo $result[2];
+    echo $result[3];
+    echo $result[4];
+    echo $result[5];
+    echo $result[6];
+    echo $result[7];
 
     $filename=$result[0];   ////0, 4, 2
     $filepath=$result[4];
