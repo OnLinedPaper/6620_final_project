@@ -15,7 +15,6 @@
 <?php
 if(isset($_GET['id'])) {
     $query = "SELECT * FROM media WHERE media_id='".$_GET['id']."'";
-    echo $query;
     $result = mysql_query( $query );
     #media_id, name, type, path, last_access_time, account_id, ip, upload_time
     $result_row = mysql_fetch_row($result);
@@ -25,6 +24,7 @@ if(isset($_GET['id'])) {
     $filename=$result[0];   ////0, 4, 2
     $filepath=$result[4];
     $type=$result[2];
+    echo $type;
     #expects type to be a string
     if(substr($type,0,5)=="image") //view image
     {
