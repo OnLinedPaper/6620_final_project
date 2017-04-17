@@ -43,7 +43,7 @@ if(isset($_GET['id'])) {
 
 <?php
     }
-
+}
 else
 {
 ?>
