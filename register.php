@@ -15,6 +15,13 @@ if(isset($_POST['submit'])) {
         if($check == 1){
             //echo "Rigister succeeds";
             $_SESSION['username']=$_POST['username'];
+
+            #set the $_SESSION['account_id']
+            $query = "SELECT account_id FROM account WHERE username='".$_SESSION['username']."'";
+            $result = mysql_query($query);
+            $result_row = mysql_fetch_row($result);
+            $_SESSION['account_id'] = $result_row[0];
+
             header('Location: browse.php');
         }
         else if($check == 2){

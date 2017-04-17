@@ -16,8 +16,14 @@ Under construction
         <?php
     }
 
-    
+    $query = "SELECT * FROM account WHERE account_id='".$_SESSION['account_id']."'";
+    $result = mysql_query($query);
+    $result_row = mysql_fetch_row($result);
+    /* account_id, type, username, password, email */
 
+    $curr_username = $result_row[2];
+    $curr_password = $result_row[3];
+    $curr_email = $result_row[4];
 ?>
 </body>
 </html>
