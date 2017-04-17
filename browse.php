@@ -30,6 +30,7 @@ function saveDownload(id)
             echo "uh-oh";
             ?>
             <meta http-equiv="refresh" content="0; url=http://webapp.cs.clemson.edu/~ndreed/metube/" />
+            <script>window.stop()</script>
             <?php
         }
     ?>
