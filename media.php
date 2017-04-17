@@ -22,7 +22,7 @@ if(isset($_GET['id'])) {
     //updateMediaTime($_GET['id']);
 
     $filename=$result_row[0];   ////0, 4, 2
-    $filepath=$result_row[4];
+    $filepath=$result_row[3];
     $type=$result_row[2];
     echo $type;
     #expects type to be a string
