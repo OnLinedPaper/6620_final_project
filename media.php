@@ -31,7 +31,7 @@ if(isset($_GET['id'])) {
         echo "(uploaded on ".$result_row[4].")<br><br>";
         echo "<img src='".$filepath."'/>";
     }
-    elseif(substr($type,0,5)=="video") //view movie
+    elseif(substr($type,0,5)=="video") //view video
     {
 ?>
     <p>Viewing Video: <?php echo $filename;?></p>
@@ -46,10 +46,10 @@ if(isset($_GET['id'])) {
 }
 else
 {
-    echo "alert: unsupported file type";
 ?>
 <meta http-equiv="refresh" content="0;url=browse.php">
 <?php
+    echo "alert: unsupported file type";
 }
 ?>
 </body>
