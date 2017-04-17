@@ -25,7 +25,7 @@ function saveDownload(id)
 
 <body>
     <?php
-        if !$_SESSION['username']
+        if(!isset($_SESSION['username']))
         {
             echo "uh-oh";
         }
