@@ -42,7 +42,7 @@
 ?>
 
 <form action="register.php" method="post">
-    Username: <input type="text" name="username"> <br>
+    Username: <input type="text" name="username" value=<?php echo "\"".$curr_username."\""?>> <br>
     Email: <input type="text" name="email"> <br>
     Old Password: <input type="password" name="password_old"> <br>
     New Password: <input  type="password" name="password1"> <br>
