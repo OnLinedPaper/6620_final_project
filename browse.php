@@ -34,7 +34,9 @@ function saveDownload(id)
             <?php
         }
     ?>
-<p>Welcome <?php echo $_SESSION['username'];?></p>
+<p>Welcome <?php echo $_SESSION['username'];?><br>
+<a href="update_profile.php">Update Profile</a>
+</p>
 
 <!--This section is the "Upload File" link-->
 <a href='media_upload.php'  style="color:#FF9900;">Upload File</a>
