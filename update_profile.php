@@ -1,7 +1,5 @@
 <html>
 <body>
-Under construction
-<script>window.stop()</script>
 
 <?php
     session_start();
