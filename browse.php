@@ -24,6 +24,12 @@ function saveDownload(id)
 </head>
 
 <body>
+    <?php
+        if !$_SESSION['username']
+        {
+            echo "uh-oh";
+        }
+    ?>
 <p>Welcome <?php echo $_SESSION['username'];?></p>
 
 <!--This section is the "Upload File" link-->
