@@ -30,7 +30,7 @@ function saveDownload(id)
         {
             echo "uh-oh, you aren't signed in!";
             ?>
-            <meta http-equiv="refresh" content="0; url=http://webapp.cs.clemson.edu/~ndreed/metube/" />
+            <meta http-equiv="refresh" content="0; url=http://webapp.cs.clemson.edu/~ndreed/metube/index.php" />
             <?php
         }
     ?>
