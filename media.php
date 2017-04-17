@@ -29,7 +29,7 @@ if(isset($_GET['id'])) {
     {
         echo "Viewing Picture: ".$filename."<br>";
         echo "(uploaded on ".$result_row[4].")<br><br>";
-        echo "<img src='".$filepath."'/>";
+        echo "<img src='".$filepath."' alt='".$filename."'/>";
     }
     elseif(substr($type,0,5)=="video") //view video
     {
