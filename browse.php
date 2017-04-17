@@ -37,7 +37,8 @@ function saveDownload(id)
 
 <?php    $query = "SELECT account_id FROM account WHERE username='".$_SESSION['username']."'";
     $result = mysql_query($query);
-    echo $result[0]."S-H-I-T" ?>
+    $result_row = mysql_fetch_row($result);
+    echo $result_row[0]."S-H-I-T" ?>
 <p>Welcome <?php echo $_SESSION['username'];?><br>
 <a href="update_profile.php">Update Profile</a>
 </p>
