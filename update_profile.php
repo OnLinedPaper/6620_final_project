@@ -37,22 +37,31 @@
             echo "<br><b>New passwords don't match.</b><br>";
         }
         else{
-            if(!isset($_POST['password1']))
-            {
+            if(!isset($_POST['password1'])) {
                 #they didn't want to change their password
-                $_POST['password1'] = $curr_password;
+                $new_password = $curr_password;
             }
-            if(!isset($POST['username']))
-            {
+            else {
+                $new_password = $_POST['password1'];
+            }
+
+            if(!isset($POST['username'])) {
                 #they didn't want to change their username
-                $_POST['username'] = $curr_username;
+                $new_username = $curr_username;
             }
-            if(!isset($_POST['email']))
-            {
+            else {
+                $new_username = $_POST['username'];
+            }
+
+            if(!isset($_POST['email'])) {
                 #they didn't want to change their email
-                $_POST['email'] = $curr_email;
+                $new_email = $curr_email;
             }
-            $query = "UPDATE account SET username='".$_POST['username']."', password='".$_POST['password1']."', email='".$_POST['email']."' WHERE account_id=".$_SESSION['account_id']."";
+            else {
+                $new_email = $_POST['email'];
+            }
+
+            $query = "UPDATE account SET username='".$new_username."', password='".$new_password."', email='".$new_email."' WHERE account_id=".$_SESSION['account_id']."";
             echo $query;
             $result = mysql_query($query);
         }
