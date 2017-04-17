@@ -26,7 +26,12 @@
     if(isset($_POST['submit']))
     {
         #update time
-        if($_POST['password1'] != $_POST['password2'])
+        if($_POST['password_old'] != $curr_password)
+        {
+            #password mismatch
+            echo "S-H-I-T";
+        }
+        else if($_POST['password1'] != $_POST['password2'])
         {
             #password match fail
             echo "<br><b>Passwords don't match.</b><br>";
