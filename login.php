@@ -18,6 +18,8 @@ if(isset($_POST['submit'])) {
             }
             else if($check==0){
                 $_SESSION['username']=$_POST['username']; //Set the $_SESSION['username']
+                $query = "SELECT account_id FROM account WHERE username='".$_POST['username']."'";
+                echo mysql_query($query);
                 header('Location: browse.php');
             }
         }
