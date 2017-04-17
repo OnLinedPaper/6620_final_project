@@ -38,7 +38,7 @@
         }
         else{
             $query = "UPDATE accounts SET username='".$_POST['username']."' password='".$_POST['password1']."' email='".$_POST['email']."' WHERE account_id = '".$_SESSION['account_id']."'";
-            echo $query
+            echo $query;
             $result = mysql_query($query);
         }
     }
