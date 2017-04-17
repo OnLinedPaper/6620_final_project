@@ -25,6 +25,8 @@ function saveDownload(id)
 
 <body>
 <p>Welcome <?php echo $_SESSION['username'];?></p>
+
+<!--This section is the "Upload File" link-->
 <a href='media_upload.php'  style="color:#FF9900;">Upload File</a>
 <div id='upload_result'>
 <?php
@@ -34,7 +36,10 @@ function saveDownload(id)
     }
 ?>
 </div>
+
 <br/><br/>
+
+<!-- This section displays the uploaded media -->
 <?php
 
     $query = "SELECT * from media";
@@ -46,6 +51,8 @@ function saveDownload(id)
 ?>
 
     <div style="background:#339900;color:#FFFFFF; width:150px;">Uploaded Media</div>
+
+    <!-- Display uploaded media as a table of links and IDs -->
     <table width="50%" cellpadding="0" cellspacing="0">
         <?php
             while ($result_row = mysql_fetch_row($result))
@@ -63,6 +70,7 @@ function saveDownload(id)
             </td>
                         <td>
                             <!--display file name-->
+                            <!--this link takes us to media.php, with the media id sent via GET for media.php to use-->
                             <a href="media.php?id=<?php echo $mediaid;?>" target="_blank"><?php echo $filename;?></a>
                         </td>
                         <td>

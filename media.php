@@ -21,9 +21,10 @@ if(isset($_GET['id'])) {
 
     //updateMediaTime($_GET['id']);
 
-    $filename=$result_row[0];   ////0, 4, 2
-    $filepath=$result_row[4];
-    $type=$result_row[2];
+    $filename=$result[0];   ////0, 4, 2
+    $filepath=$result[4];
+    $type=$result[2];
+    #expects type to be a string
     if(substr($type,0,5)=="image") //view image
     {
         echo "Viewing Picture:";
