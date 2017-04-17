@@ -14,8 +14,18 @@
         <?php
     }
 
+    $query = "SELECT * FROM account WHERE account_id='".$_SESSION['account_id']."'";
+    $result = mysql_query($query);
+    $result_row = mysql_fetch_row($result);
+    /* account_id, type, username, password, email */
+
+    $curr_username = $result_row[2];
+    $curr_password = $result_row[3];
+    $curr_email = $result_row[4];
+
     if(isset($_POST['submit']))
     {
+        #update time
         if($_POST['password1'] != $_POST['password2'])
         {
             #password match fail
@@ -27,23 +37,11 @@
         }
     }
 
-
-
-
-
-    $query = "SELECT * FROM account WHERE account_id='".$_SESSION['account_id']."'";
-    $result = mysql_query($query);
-    $result_row = mysql_fetch_row($result);
-    /* account_id, type, username, password, email */
-
-    $curr_username = $result_row[2];
-    $curr_password = $result_row[3];
-    $curr_email = $result_row[4];
 ?>
 
 <form action="register.php" method="post">
     Username: <input type="text" name="username" value=<?php echo "\"".$curr_username."\""?>> <br>
-    Email: <input type="text" name="email"> <br>
+    Email: <input type="text" name="email" value=<?php echo "\"".$curr_email."\""?>> <br>
     Old Password: <input type="password" name="password_old"> <br>
     New Password: <input  type="password" name="password1"> <br>
     Repeat New password: <input type="password" name="password2"> <br>
