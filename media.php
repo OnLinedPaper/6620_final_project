@@ -45,7 +45,7 @@ if(isset($_GET['id'])) {
     }
     else //unsupported
     {
-        echo "alert: unsupported file type";
+        echo "alert! unsupported file type: ".$type;
     }
 }
 else
