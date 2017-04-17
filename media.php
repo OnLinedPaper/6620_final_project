@@ -28,7 +28,7 @@ if(isset($_GET['id'])) {
     if(substr($type,0,5)=="image") //view image
     {
         echo "Viewing Picture: ".$filename."<br>";
-        echo "(uploaded on ".echo $result_row[4].")<br><br>";
+        echo "(uploaded on ".$result_row[4].")<br><br>";
         echo "<img src='".$filepath."'/>";
     }
     else //view movie
