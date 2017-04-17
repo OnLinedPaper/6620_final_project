@@ -21,7 +21,7 @@ if(isset($_GET['id'])) {
 
     //updateMediaTime($_GET['id']);
 
-    $filename=$result_row[0];   ////0, 4, 2
+    $filename=$result_row[1];   ////1, 4, 2
     $filepath=$result_row[3];
     $type=$result_row[2];
     #expects type to be a string
@@ -39,7 +39,7 @@ if(isset($_GET['id'])) {
 
     <object id="MediaPlayer" width=320 height=286 classid="CLSID:22D6f312-B0F6-11D0-94AB-0080C74C7E95" standby="Loading Windows Media Player components…" type="application/x-oleobject" codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=6,4,7,1112">
 
-<param name="filename" value="<?php echo $result_row[4];?>">
+<param name="filename" value="<?php echo $result_row[1];?>">
     <!-- echo $result_row[2].$result_row[1];  -->
 
 
