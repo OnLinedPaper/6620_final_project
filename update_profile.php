@@ -44,7 +44,7 @@
 
 ?>
 
-<form action="register.php" method="post">
+<form action="update_profile.php" method="post">
     Username: <input type="text" name="username" value=<?php echo "\"".$curr_username."\""?>> <br>
     Email: <input type="text" name="email" value=<?php echo "\"".$curr_email."\""?>> <br>
     Old Password: <input type="password" name="password_old"> <br>
