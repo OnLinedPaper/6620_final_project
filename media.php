@@ -43,13 +43,16 @@ if(isset($_GET['id'])) {
 
 <?php
     }
+    else //unsupported
+    {
+        echo "alert: unsupported file type";
+    }
 }
 else
 {
 ?>
 <meta http-equiv="refresh" content="0;url=browse.php">
 <?php
-    echo "alert: unsupported file type";
 }
 ?>
 </body>
