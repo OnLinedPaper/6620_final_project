@@ -29,15 +29,16 @@
         if($_POST['password_old'] != $curr_password)
         {
             #password mismatch
-            echo "S-H-I-T";
+            echo "<br><b>Old password is incorrect.</b><br>";
         }
         else if($_POST['password1'] != $_POST['password2'])
         {
             #password match fail
-            echo "<br><b>Passwords don't match.</b><br>";
+            echo "<br><b>New passwords don't match.</b><br>";
         }
         else{
             $query = "UPDATE accounts SET username='".$_POST['username']."' password='".$_POST['password1']."' email='".$_POST['email']."' WHERE account_id = '".$_SESSION['account_id']."'";
+            echo $query
             $result = mysql_query($query);
         }
     }
