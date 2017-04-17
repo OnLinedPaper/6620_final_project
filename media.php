@@ -31,7 +31,7 @@ if(isset($_GET['id'])) {
         echo "(uploaded on ".$result_row[4].")<br><br>";
         echo "<img src='".$filepath."'/>";
     }
-    elseif(substr($type,0,5)=="movie") //view movie
+    elseif(substr($type,0,5)=="video") //view movie
     {
 ?>
     <p>Viewing Video: <?php echo $filename;?></p>
