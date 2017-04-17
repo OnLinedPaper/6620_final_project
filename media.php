@@ -50,7 +50,10 @@ if(isset($_GET['id'])) {
 
 </object>
 
-
+<video width="320" height="240" controls>
+    <source src=<?php echo "'$filepath'";?> type=<?php echo "'$type'";?>>
+        Video is not supported.
+</video>
 
 
 
