@@ -45,7 +45,7 @@
                 $new_password = $_POST['password1'];
             }
 
-            if($POST['username'] == "") {
+            if($_POST['username'] == "") {
                 #they didn't want to change their username
                 $new_username = $curr_username;
             }
