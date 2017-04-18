@@ -12,6 +12,8 @@
             <?php
         }
 
+        echo "<a href=\"browse.php\">Back to browse</a></br>";
+
         if(isset($_GET['id'])){
             $query = "SELECT account.account_id, account.username, media.media_id, media.name FROM account LEFT JOIN media ON account.account_id = media.account_id WHERE account.account_id = ".$_GET['id'];
             #get some data. use left join to still get profile info, even if that profile never uploaded anything.
