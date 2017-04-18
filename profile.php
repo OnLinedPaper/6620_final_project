@@ -28,10 +28,9 @@
 
             echo "<br />".$result_row[2]." : ".$result_row[3]."<br />";
             #print out all media by that user
-            while($result_row = mysql_fetch_row($result))
-            {
+            do{
                 echo "<br />".$result_row[2]." : ".$result_row[3]."<br />";
-            }
+            }while($result_row = mysql_fetch_row($result))
         }
 
         else{
