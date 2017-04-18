@@ -94,7 +94,7 @@ function saveDownload(id)
                             <a href="<?php echo str_replace(' ', '+', $filenpath);?>" download>Download</a>
                         </td>
                         <td>
-                            <?php echo $uploader_username." ".$uploader_id; ?>
+                            <a href="profile.php?id=<?php echo $uploader_id ?>"><?php echo $uploader_username; ?></a>
                         </td>
         </tr>
             <?php
