@@ -38,7 +38,7 @@
         }
         else if(get_account_id_from_username($_POST['username']) != "")
         {
-            echo "S-H-I-T";
+            echo "That username is taken already.";
         }
         else{
             if($_POST['password1'] == "") {
