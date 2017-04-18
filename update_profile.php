@@ -67,6 +67,8 @@
 
             $query = "UPDATE account SET username='".$new_username."', password='".$new_password."', email='".$new_email."' WHERE account_id=".$_SESSION['account_id']."";
             $result = mysql_query($query);
+            
+            header('Location: browse.php');
         }
     }
 
