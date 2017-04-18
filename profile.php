@@ -1,7 +1,7 @@
 <html>
 <body>
     <?php
-        session_start()
+        session_start();
         include_once "function.php";
 
         #this redirects the user if they are not signed in
