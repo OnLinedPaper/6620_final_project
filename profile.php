@@ -21,7 +21,7 @@
             echo $tmp_row[0]." : ".$tmp_row[1]."<br /><br />";
             #echo user id and username
 
-            echo "<br />".$tmp_row[2]."<br />".$tmp_row[3]."<br />";
+            echo "S-H-I-T <br />".$tmp_row[2]."<br />".$tmp_row[3]."<br />";
             #print out all media by that user
             while($result_row = mysql_fetch_row($result))
             {
