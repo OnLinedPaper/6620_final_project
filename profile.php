@@ -28,7 +28,7 @@
             echo "<b>uploaded media:<br /></b>";
             #print out all media by that user
             do{
-                echo "<br />".$result_row[2]." : <a href=\"media.php?id=$result_row[2]\">".$result_row[3]."</a><br />";
+                echo "<br />".$result_row[2]." : <a href=\"media.php?id=$result_row[2]\" target=\"_blank\">".$result_row[3]."</a><br />";
             }while($result_row = mysql_fetch_row($result));
         }
 
