@@ -14,6 +14,8 @@
 
         if(isset($_GET['id'])){
             $query = "SELECT account.account_id, account.username, media.media_id, media.name FROM account LEFT JOIN media ON account.account_id = media.account_id WHERE account.account_id = ".$_GET['id'];
+            #get some data. use left join to still get profile info, even if that profile never uploaded anything.
+
             $result = mysql_query($query);
             $result_row = mysql_fetch_row($result);
             #account_id, username, media id, medianame
