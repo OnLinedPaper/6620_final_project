@@ -70,11 +70,12 @@ function saveDownload(id)
     <table width="50%" cellpadding="0" cellspacing="0">
         <?php
             while ($result_row = mysql_fetch_row($result))
-            #media_id, filename, type, path, last_access_time, account_id, ip, upload_time
+            #media_id, filename, type, path, last_access_time, account_id, ip, upload_time, username
             {
                 $mediaid = $result_row[0];
                 $filename = $result_row[1];
                 $filenpath = $result_row[3];
+                $uploader_username = $result_row[8];
         ?>
              <tr valign="top">
             <td>
@@ -90,6 +91,9 @@ function saveDownload(id)
                         <td>
                             <!--file download link-->
                             <a href="<?php echo str_replace(' ', '+', $filenpath);?>" download>Download</a>
+                        </td>
+                        <td>
+                            <?php echo $uploader_username; ?>
                         </td>
         </tr>
             <?php
