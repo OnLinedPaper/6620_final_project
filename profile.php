@@ -24,12 +24,11 @@
             echo "account id: ".$result_row[0]."<br />username: ".$result_row[1]."<br /><br />";
             #echo user id and username
 
-            echo "<b>uploaded media:<br /></b>";
 
-            echo "<br />".$result_row[2]." : ".$result_row[3]."<br />";
+            echo "<b>uploaded media:<br /></b>";
             #print out all media by that user
             do{
-                echo "<br />".$result_row[2]." : ".$result_row[3]."<br />";
+                echo "<br />".$result_row[2]." : <a href=\"media.php?id=$result_row[2]\">".$result_row[3]."</a><br />";
             }while($result_row = mysql_fetch_row($result));
         }
 
