@@ -15,13 +15,12 @@
         if(isset($_GET['id'])){
             $query = "SELECT account.account_id, account.username, media.media_id, media.name FROM account JOIN media ON account.account_id = media.account_id WHERE account.account_id = ".$_GET['id'];
             $result = mysql_query($query);
-            $tmp = $result;
-            $tmp_row = mysql_fetch_row($tmp);
+            $result_row = mysql_fetch_row($result);
             #account_id, username, media id, medianame
-            echo $tmp_row[0]." : ".$tmp_row[1]."<br /><br />";
+            echo $result_row[0]." : ".$result_row[1]."<br /><br />";
             #echo user id and username
 
-            echo "S-H-I-T <br />".$tmp_row[2]."<br />".$tmp_row[3]."<br />";
+            echo "<br />".$result_row[2]."<br />".$result_row[3]."<br />";
             #print out all media by that user
             while($result_row = mysql_fetch_row($result))
             {
