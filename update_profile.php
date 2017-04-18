@@ -36,7 +36,7 @@
             #password match fail
             echo "<br><b>New passwords don't match.</b><br>";
         }
-        else if(get_account_id_from_username($new_username) != "")
+        else if(get_account_id_from_username($_POST['username']) != "")
         {
             echo "S-H-I-T";
         }
