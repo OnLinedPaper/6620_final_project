@@ -15,12 +15,12 @@
         echo "<a href=\"browse.php\">Back to browse</a></br>";
 
         if(isset($_GET['id'])){
-            $query = "SELECT account.account_id, account.username, media.media_id, media.name FROM account LEFT JOIN media ON account.account_id = media.account_id WHERE account.account_id = ".$_GET['id'];
+            $query = "SELECT account.account_id, account.username, media.media_id, media.name, media.path FROM account LEFT JOIN media ON account.account_id = media.account_id WHERE account.account_id = ".$_GET['id'];
             #get some data. use left join to still get profile info, even if that profile never uploaded anything.
 
             $result = mysql_query($query);
             $result_row = mysql_fetch_row($result);
-            #account_id, username, media id, medianame
+            #account_id, username, media id, medianame, mediapath
             echo "account id: ".$result_row[0]."<br />username: ".$result_row[1]."<br /><br />";
             #echo user id and username
 
@@ -28,7 +28,7 @@
             echo "<b>uploaded media:<br /></b>";
             #print out all media by that user
             do{
-                echo "<br />".$result_row[2]." : <a href=\"media.php?id=$result_row[2]\" target=\"_blank\">".$result_row[3]."</a><br />";
+                echo "<br /><a href=\"str_replace(' ', '+', result_row[4])\" download>".$result_row[2]."</a> : <a href=\"media.php?id=$result_row[2]\" target=\"_blank\">".$result_row[3]."</a><br />";
             }while($result_row = mysql_fetch_row($result));
         }
 
