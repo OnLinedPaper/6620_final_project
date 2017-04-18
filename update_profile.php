@@ -36,7 +36,7 @@
             #password match fail
             echo "<br><b>New passwords don't match.</b><br>";
         }
-        else if(get_account_id_from_username($_POST['username']) != "")
+        else if($_curr_username != $_POST['username'] and get_account_id_from_username($_POST['username']) != "")
         {
             echo "That username is taken already.";
         }
