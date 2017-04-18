@@ -16,7 +16,7 @@
             $query = "SELECT account.account_id, account.username, media.media_id, media.name FROM account JOIN media ON account.account_id = media.account_id WHERE account.account_id = ".$_GET['id'];
             $result = mysql_query($query);
             $result_row = mysql_fetch_row($result);
-            echo $result_row[1];
+            echo $result_row[0]."<br />".$result_row[1]."<br />".$result_row[2]."<br />".$result_row[3]."<br />".;
         }
 
         else{
