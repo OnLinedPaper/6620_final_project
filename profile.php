@@ -17,8 +17,11 @@
             $result = mysql_query($query);
             $result_row = mysql_fetch_row($result);
             #account_id, username, media id, medianame
-            echo $result_row[0]."<br />".$result_row[1]."<br /><br />";
+            echo $result_row[0]." : ".$result_row[1]."<br /><br />";
+            #echo user id and username
 
+            echo "<br />".$result_row[2]."<br />".$result_row[3]."<br />";
+            #print out all media by that user
             while($result_row = mysql_fetch_row($result))
             {
                 echo "<br />".$result_row[2]."<br />".$result_row[3]."<br />";
