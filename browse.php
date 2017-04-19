@@ -21,6 +21,11 @@ function saveDownload(id)
      );
 }
 </script>
+<style>
+    td{
+        padding: 4px;
+    }
+</style>
 </head>
 
 <body>
@@ -141,26 +146,26 @@ function saveDownload(id)
                         echo $mediaid;  //mediaid
                     ?>
             </td>
-                        <td>
-                            <!--display file name-->
-                            <!--this link takes us to media.php, with the media id sent via GET for media.php to use-->
-                            <a href="media.php?id=<?php echo $mediaid;?>" target="_blank"><?php echo $filename;?></a>
-                        </td>
-                        <td>
-                            <!--upload time-->
-                            Uploaded on <?php echo $upload_time ?>
-                        </td>
-                        <td>
-                            <!--views-->
-                            Views: <?php echo $views ?>
-                        </td>
-                        <td>
-                            <!--file download link-->
-                            <a href="<?php echo str_replace(' ', '+', $filenpath);?>" download>Download</a>
-                        </td>
-                        <td>
-                            <a href="profile.php?id=<?php echo $uploader_id ?>"><?php echo $uploader_username; ?></a>
-                        </td>
+            <td>
+                <!--display file name-->
+                <!--this link takes us to media.php, with the media id sent via GET for media.php to use-->
+                <a href="media.php?id=<?php echo $mediaid;?>" target="_blank"><?php echo $filename;?></a>
+            </td>
+            <td>
+                <!--upload time-->
+                Uploaded on <?php echo $upload_time ?>
+            </td>
+            <td>
+                <!--views-->
+                Views: <?php echo $views ?>
+            </td>
+            <td>
+                <!--file download link-->
+                <a href="<?php echo str_replace(' ', '+', $filenpath);?>" download>Download</a>
+            </td>
+            <td>
+                <a href="profile.php?id=<?php echo $uploader_id ?>"><?php echo $uploader_username; ?></a>
+            </td>
         </tr>
             <?php
                 }
