@@ -96,7 +96,7 @@ function saveDownload(id)
         $query = $query."JOIN media_metadata ON media.media_id = media_metadata.media_id WHERE (";
         $words = explode(" ", $_POST['searchbar']);
         foreach($words as &$oneword){
-            $query = $query."media_metadata.keyword = \"".$oneword."\" OR "
+            $query = $query."media_metadata.keyword = \"".$oneword."\" OR ";
         }
         $query = $query."media_metadata.keyword = " ");";
     }
