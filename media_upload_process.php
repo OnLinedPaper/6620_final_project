@@ -43,8 +43,8 @@ if(!file_exists($dirfile))
                 else /*Successfully upload file*/
                 {
                     //insert into media table
-                    $insert = "insert into media(name,type,path,account_id)".
-                              "values('".urlencode($_FILES["file"]["name"])."','".$_FILES["file"]["type"]."','./uploads/$username/".$_FILES["file"]["name"]."','$account_id')";
+                    $insert = "insert into media(name,type,path,account_id,upload_time)".
+                              "values('".urlencode($_FILES["file"]["name"])."','".$_FILES["file"]["type"]."','./uploads/$username/".$_FILES["file"]["name"]."','$account_id',CURRENT_TIMESTAMP)";
                     $queryresult = mysql_query($insert)
                           or die("Insert into Media error in media_upload_process.php " .mysql_error());
                     $result="0";
