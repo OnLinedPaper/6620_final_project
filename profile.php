@@ -68,27 +68,6 @@
 
                 $result = mysql_query($query);
             }
-
-
-            $query = "INSERT INTO interaction (account_id, target_id, contact, friend, foe, blocked) VALUES (";
-            #initial statement
-            $query = $query.$_SESSION['account_id'].", ";
-            #add the account id
-            $query = $query.$_GET['id'].", ";
-            #add the target id
-            $query = $query.(isset($_POST['contact']) ? "true" : "false").", ";
-            #contact is true if it's checked, otherwise false
-            $query = $query.(isset($_POST['friendfoe']) ? (($_POST['friendfoe'] == "friend") ? "true" : "false") : "false").", ";
-            #friend is true if that's the radio selected; else it's false
-            $query = $query.(isset($_POST['friendfoe']) ? (($_POST['friendfoe'] == "foe") ? "true" : "false") : "false").", ";
-            #foe is true if that's the radio selected; else it's false
-            $query = $query.(isset($_POST['block']) ? "true" : "false").");";
-            #block is true if set; else it's false
-            #...mother of all queries
-
-            echo "<br /><br />".$query."<br /><br />";
-
-            $result = mysql_query($query);
         }
 
 
