@@ -28,7 +28,7 @@ session_start();
    <input  name="file" type="file" size="50" />
 
     <input value="Upload" name="submit" type="submit" /><br />
-    <input type="textarea" name="keywords" rows="4" cols="40"/>
+    <textarea name="keywords" rows="4" cols="40"/>
   </p>
 
 
