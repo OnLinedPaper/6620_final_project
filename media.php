@@ -61,7 +61,7 @@ if(isset($_GET['id'])) {
     }
 
     #comments section
-    $comment_query = "SELECT comments.account_id, comments.comment, account.username FROM comments JOIN account ON comments.account_id = account.account_id WHERE comments.account_id = ".$_GET['id'];
+    $comment_query = "SELECT comments.account_id, comments.comment, account.username FROM comments JOIN account ON comments.account_id = account.account_id WHERE comments.media_id = ".$_GET['id'];
     #get all comments whose media id is the currently viewed media
     $comment_result = mysql_query($comment_query);
     while ($comment_row = mysql_fetch_row($comment_result)){
