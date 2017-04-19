@@ -68,7 +68,7 @@ function saveDownload(id)
 <!-- This section displays the uploaded media -->
 <?php
 
-    $query = "SELECT media.media_id, media.name, media.path, account.account_id, account.username, media.type, interaction.blocked ";
+    $query = "SELECT media.media_id, media.name, media.path, account.account_id, account.username, media.type, interaction.media_blocked ";
     $query = $query."FROM media ";
     $query = $query."JOIN account ON media.account_id = account.account_id ";
     $query = $query."LEFT JOIN interaction ON (media.account_id = interaction.account_id AND ".$_SESSION['account_id']." = interaction.target_id);";
