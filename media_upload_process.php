@@ -58,7 +58,7 @@ if(!file_exists($dirfile))
                     $words = explode(" ", $_POST['keywords']);
                     foreach ($words as &$oneword){
                         $query = "INSERT INTO media_metadata(media_id, keyword) VALUES(".$id[0].", \"".$oneword."\");";
-                        echo $query."<br />"
+                        echo $query."<br />";
                     }
                 }
             }
