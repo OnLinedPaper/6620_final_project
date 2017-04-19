@@ -73,8 +73,8 @@ function saveDownload(id)
     $query = $query."JOIN account ON media.account_id = account.account_id ";
     $query = $query."LEFT JOIN interaction ON (media.account_id = interaction.account_id AND ".$_SESSION['account_id']." = interaction.target_id) ";
 
-    if(isset($_POST['submit2'])){
-        if($_POST['order'] == 'recent'){
+    if(isset($_POST["submit2"])){
+        if($_POST["order"] == "recent"){
             $query = $query."ORDER BY media.upload_time DESC";
         }
     }
