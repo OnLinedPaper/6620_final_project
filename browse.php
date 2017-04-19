@@ -78,6 +78,10 @@ function saveDownload(id)
             $query = $query."ORDER BY media.upload_time DESC";
             echo "<b>Sorting most recent first</b><br />";
         }
+        else if($_POST["order"] == "views"){
+            $query = $query."ORDER BY media.views DESC";
+            echo "<b>Sorting most viewed first</b><br />"
+        }
         else{
             echo "<br />";
         }
@@ -108,6 +112,7 @@ function saveDownload(id)
         <select name="order">
             <option value="all">(Unordered)</option>
             <option value="recent">Most Recent</option>
+            <option value="views">Most Viewed</option>
             <input name="submit2" type="submit" value="Submit" />
         </select>
     </form>
