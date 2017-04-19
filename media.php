@@ -77,7 +77,7 @@ if(isset($_GET['id'])) {
     #insert comment form
     $allowed_query = "SELECT blocked FROM interaction WHERE account_id=";
     $allowed_query = $allowed_query.$uploader_id." AND target_id=";
-    $allowed_query = $allowed_query.$_SESSION['id'].";";
+    $allowed_query = $allowed_query.$_SESSION['account_id'].";";
 
     $allowed_result = mysql_query($allowed_query);
     $allowed_row = mysql_fetch_row($allowed_result);
