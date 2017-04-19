@@ -63,7 +63,7 @@ function saveDownload(id)
 ?>
 </div>
 
-<br/><br/>
+<br/>
 
 <!-- This section displays the uploaded media -->
 <?php
@@ -77,6 +77,9 @@ function saveDownload(id)
         if($_POST["order"] == "recent"){
             $query = $query."ORDER BY media.upload_time DESC";
             echo "<b>Sorting most recent first</b><br />";
+        }
+        else{
+            echo "<br />";
         }
     }
 
