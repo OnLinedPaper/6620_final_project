@@ -80,7 +80,7 @@ function saveDownload(id)
         }
         else if($_POST["order"] == "views"){
             $query = $query."ORDER BY media.views DESC";
-            echo "<b>Sorting most viewed first</b><br />"
+            echo "<b>Sorting most viewed first</b><br />";
         }
         else{
             echo "<br />";
