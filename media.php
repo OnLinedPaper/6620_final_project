@@ -31,8 +31,8 @@ if(isset($_GET['id'])) {
         $query = "INSERT INTO comments (media_id, account_id, comment) VALUES (";
         $query = $query."media_id = ".$_GET['id'].", ";
         $query = $query."account_id = ".$_SESSION['account_id'].", ";
-        $query = $query."comment = ".$_POST['comment'].");";
-        echo $query."<br />S-H-I-T";
+        $query = $query."comment = \"".$_POST['comment']."\");";
+        echo $query."<br />S-H-I-T<br />";
 
         $result = mysql_query($query);
     }
