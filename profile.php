@@ -23,7 +23,7 @@
             #account_id, username, media id, medianame, mediapath
             echo "account id: ".$result_row[0]."<br />username: ".$result_row[1]."<br /><br />";
             #echo user id and username
-            if($_GET['id'] == $_SESSION['id']){
+            if($_GET['id'] == $_SESSION['account_id']){
                 echo "S-H-I-T";
             }
 
