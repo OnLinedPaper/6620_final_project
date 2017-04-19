@@ -67,6 +67,7 @@ if(isset($_GET['id'])) {
     {
 ?>
     <p>Viewing Video: <?php echo $filename;?></p>
+    <?php echo "Views: ".$views."<br /><br />"; ?>
 
     <video width="320" height="240" controls>
         <source src=<?php echo "'$filepath'";?> type=<?php echo "'$type'";?>>
