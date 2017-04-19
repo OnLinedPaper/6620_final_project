@@ -91,7 +91,12 @@ function saveDownload(id)
             echo "<br />";
         }
     }
-
+    if(isset($_POST['search'])){
+        $words = explode(" ", $_POST['searchbar']);
+        foreach($words as &$oneword){
+            echo $oneword." S-H-I-T<br />";
+        }
+    }
     $query = $query.";";
 
     $result = mysql_query( $query );
@@ -103,6 +108,10 @@ function saveDownload(id)
 ?>
 
     <div style="background:#339900;color:#FFFFFF; width:150px;">Uploaded Media</div>
+    <form action="browse.php" method="post">
+        <textarea name="searchbar" rows="1" cols="40"/>Keyword search...</textarea>
+        <input name="search" type="submit" value="Search" />
+    </form>
     <form action="browse.php" method="post">
         <select name="category">
             <option value="all">(All media)</option>
