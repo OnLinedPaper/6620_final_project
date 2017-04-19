@@ -137,7 +137,7 @@ function saveDownload(id)
                         <td>
                             <?php
                             if($blocked){
-                                echo "S-H-I-T"
+                                echo "S-H-I-T";
                             }
                             ?>
                         </td>
