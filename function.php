@@ -37,7 +37,6 @@ function user_pass_check($username, $password)
 {
 
     $query = "select * from account where username='$username'";
-    echo  $query;
     $result = mysql_query( $query );
     #account_id, type, username, password, email
 
