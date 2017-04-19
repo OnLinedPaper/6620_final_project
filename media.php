@@ -32,6 +32,7 @@ if(isset($_GET['id'])) {
         $query = $query."media_id = ".$_GET['id'].", ";
         $query = $query."account_id = ".$_SESSION['account_id'].", ";
         $query = $query."comment = ".$_POST['comment'].");";
+        echo $query."<br />S-H-I-T";
 
         $result = mysql_query($query);
     }
