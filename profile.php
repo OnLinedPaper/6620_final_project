@@ -14,6 +14,14 @@
 
         echo "<a href=\"browse.php\">Back to browse</a></br>";
 
+
+        #this part deals with contact, friend/for, blocking
+        if(isset($_POST['submit'])){
+            $query = "INSERT INTO interaction (account_id, target_id, contact, friend, foe, blocked) VALUES ($_SESSION['account_id'], $_GET['id'], isset($_POST['contact']) ? true : false, isset($_POST['friendfoe']) ? ($_POST['friendfoe'] == \"friend\") ? true : false) : false, isset($_POST['friendfoe']) ? ($_POST['friendfoe'] == \"foe\") ? true : false) : false, isset($_POST['block']) ? true : false";
+            $result = mysql_query($query);
+        }
+
+
         if(isset($_GET['id']) and $_GET['id'] != ""){
             $query = "SELECT account.account_id, account.username, media.media_id, media.name, media.path FROM account LEFT JOIN media ON account.account_id = media.account_id WHERE account.account_id = ".$_GET['id'];
             #get some data. use left join to still get profile info, even if that profile never uploaded anything.
@@ -29,7 +37,7 @@
                 <form action="profile.php?id=<?php echo $_GET['id'] ?>" method="post">
                     <input type="checkbox" name="contact" value="add" />Add contact<br />
                     <input type="radio" name="friendfoe" value="friend" />Set friend<br />
-                    <input type="radio" name="friendfoe" value="friend" />Set foe<br />
+                    <input type="radio" name="friendfoe" value="foe" />Set foe<br />
                     <input type="checkbox" name="block" value="block" />Block user<br />
                     <input type="submit" value="Submit" />
                     <input type="reset" value = "Reset" /><br />
