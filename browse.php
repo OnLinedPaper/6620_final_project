@@ -25,9 +25,6 @@ function saveDownload(id)
     td{
         padding: 4px;
     }
-    body{
-        padding:0;
-    }
 </style>
 </head>
 
@@ -126,7 +123,7 @@ function saveDownload(id)
     </form>
 
     <!-- Display uploaded media as a table of links and IDs -->
-    <table width="50%" cellpadding="0" cellspacing="0">
+    <table width="100%">
         <?php
             while ($result_row = mysql_fetch_row($result))
             #media_id, name, path, account_id, username
