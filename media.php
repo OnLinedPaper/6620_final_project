@@ -43,9 +43,8 @@ if(isset($_GET['id'])) {
     }
 
 
-    $query = "SELECT name, path, type, upload_time, account_id FROM media WHERE media_id='".$_GET['id']."'";
+    $query = "SELECT name, path, type, upload_time, account_id, views FROM media WHERE media_id='".$_GET['id']."'";
     $result = mysql_query( $query );
-    #name, path, type, upload_time
     $result_row = mysql_fetch_row($result);
 
     //updateMediaTime($_GET['id']);
@@ -55,11 +54,13 @@ if(isset($_GET['id'])) {
     $type=$result_row[2];
     $date=$result_row[3];
     $uploader_id=$result_row[4];
+    $views=$result_row[5];
     #expects type to be a string
     if(substr($type,0,5)=="image") //view image
     {
         echo "Viewing Picture: ".$filename."<br>";
         echo "(uploaded on ".$date.")<br><br>";
+        echo "Views: ".$views;
         echo "<img src='".str_replace(' ', '+', $filepath)."' alt='".$filename."'/>";
     }
     elseif(substr($type,0,5)=="video") //view video
