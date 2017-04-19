@@ -10,4 +10,4 @@ CREATE TABLE downloads(download_id INT NOT NULL AUTO_INCREMENT, account_id INT, 
 CREATE TABLE interaction(account_id INT, target_id INT, contact TINYINT(1), friend TINYINT(1), foe TINYINT(1), blocked TINYINT(1), media_blocked TINYINT(1), FOREIGN KEY (account_id) REFERENCES account(account_id), FOREIGN KEY (target_id) REFERENCES account(account_id));
     /* account_id, target_id, contact, friend, foe, blocked, media_blocked */
 
-CREATE TABLE comments(media_id INT, account_id INT, comment VARCHAR(2000), FOREIGN KEY (media_id) REFERENCES media(media_id), FOREIGN KEY account_id REFERENCES account(account_id));
+CREATE TABLE comments(media_id INT, account_id INT, comment VARCHAR(2000));
