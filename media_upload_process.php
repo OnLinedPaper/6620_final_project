@@ -58,6 +58,7 @@ if(!file_exists($dirfile))
                     $words = explode(" ", $_POST['keywords']);
                     foreach ($words as &$oneword){
                         $query = "INSERT INTO media_metadata(media_id, keyword) VALUES(".$id[0].", \"".$oneword."\");";
+                        echo $query."<br />"
                     }
                 }
             }
@@ -71,4 +72,4 @@ if(!file_exists($dirfile))
     //You can process the error code of the $result here.
 ?>
 
-<meta http-equiv="refresh" content="0;url=browse.php?result=<?php echo $result;?>">
+<!--<meta http-equiv="refresh" content="0;url=browse.php?result=<?php echo $result;?>">

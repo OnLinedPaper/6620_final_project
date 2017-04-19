@@ -12,4 +12,4 @@ CREATE TABLE interaction(account_id INT, target_id INT, contact TINYINT(1), frie
 
 CREATE TABLE comments(media_id INT, account_id INT, comment VARCHAR(2000));
 
-CREATE TABLE media_metadata(media_id INT, keyword VARCHAR(40));
+CREATE TABLE media_metadata(media_id INT, keyword VARCHAR(40) PRIMARY KEY (media_id, keyword));
