@@ -68,7 +68,7 @@ function saveDownload(id)
 <!-- This section displays the uploaded media -->
 <?php
 
-    $query = "SELECT media.media_id, media.name, media.path, account.account_id, account.username, media.type, interaction.media_blocked ";
+    $query = "SELECT media.media_id, media.name, media.path, account.account_id, account.username, media.type, interaction.media_blocked, media.upload_time, media.views ";
     $query = $query."FROM media ";
     $query = $query."JOIN account ON media.account_id = account.account_id ";
     $query = $query."LEFT JOIN interaction ON (media.account_id = interaction.account_id AND ".$_SESSION['account_id']." = interaction.target_id) ";
@@ -130,6 +130,8 @@ function saveDownload(id)
                 $uploader_username = $result_row[4];
                 $type = $result_row[5];
                 $blocked = $result_row[6];
+                $upload_time = $result_row[7];
+                $views = $result_row[8];
 
                 if(!$blocked and ($category=="all" or substr($type,0,5)==$category or ($category=="other" and substr($type,0,5) != "video" and substr($type,0,5) != "image"))){
         ?>
@@ -143,6 +145,14 @@ function saveDownload(id)
                             <!--display file name-->
                             <!--this link takes us to media.php, with the media id sent via GET for media.php to use-->
                             <a href="media.php?id=<?php echo $mediaid;?>" target="_blank"><?php echo $filename;?></a>
+                        </td>
+                        <td>
+                            <!--upload time-->
+                            Uploaded on <?php echo $upload_time ?>
+                        </td>
+                        <td>
+                            <!--views-->
+                            Views: <?php echo $views ?>
                         </td>
                         <td>
                             <!--file download link-->
