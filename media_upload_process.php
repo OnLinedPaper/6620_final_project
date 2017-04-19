@@ -11,8 +11,6 @@ include_once "function.php";
 $username=$_SESSION['username'];
 $account_id=get_account_id_from_username($username);
 
-echo $account_id;
-
 //Create Directory if doesn't exist
 if(!file_exists('uploads/'))
     mkdir('uploads/', 0757);
@@ -58,7 +56,7 @@ if(!file_exists($dirfile))
                     $words = explode(" ", $_POST['keywords']);
                     foreach ($words as &$oneword){
                         $query = "INSERT INTO media_metadata(media_id, keyword) VALUES(".$id[0].", \"".$oneword."\");";
-                        echo $query."<br />";
+                        $result = mysql_query($result);
                     }
                 }
             }
@@ -72,4 +70,4 @@ if(!file_exists($dirfile))
     //You can process the error code of the $result here.
 ?>
 
-<!--<meta http-equiv="refresh" content="0;url=browse.php?result=<?php echo $result;?>">
+<meta http-equiv="refresh" content="0;url=browse.php?result=<?php echo $result;?>">
