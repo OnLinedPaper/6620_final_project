@@ -25,6 +25,9 @@ function saveDownload(id)
     td{
         padding: 4px;
     }
+    body{
+        margin:0;
+    }
 </style>
 </head>
 
