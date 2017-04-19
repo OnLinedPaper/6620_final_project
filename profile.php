@@ -40,8 +40,6 @@
                 #block is true if set; else it's false
                 #...mother of all queries
 
-                echo "<br /><br />".$query."<br /><br />";
-
                 $result = mysql_query($query);
             }
             else {
@@ -63,8 +61,6 @@
                 #block is true if set; else it's false
                 $query = $query."WHERE account_id = ".$_SESSION['account_id']." AND target_id = ".$_GET['id'].";";
                 #...mother of all queries
-
-                echo "<br /><br />".$query."<br /><br />";
 
                 $result = mysql_query($query);
             }
