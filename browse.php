@@ -69,6 +69,24 @@ function saveDownload(id)
 ?>
 
     <div style="background:#339900;color:#FFFFFF; width:150px;">Uploaded Media</div>
+    <form action="media.php" method="post">
+        <select name="category">
+            <option value="all">
+                (All media)
+            </option>
+            <option value="image">
+                Images
+            </option>
+            <option value="video">
+                Videos
+            </option>
+            <option value="other">
+                Other
+            </option> <br />
+            <input name="submit" type="submit" value="Submit" />
+        </select>
+
+    </form>
 
     <!-- Display uploaded media as a table of links and IDs -->
     <table width="50%" cellpadding="0" cellspacing="0">
