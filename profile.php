@@ -29,7 +29,7 @@
             #friend is true if that's the radio selected; else it's false
             $query = $query.(isset($_POST['friendfoe']) ? (($_POST['friendfoe'] == "foe") ? "true" : "false") : "false").", ";
             #foe is true if that's the radio selected; else it's false
-            $query = $query.(isset($_POST['block']) ? "true" : "false").");"
+            $query = $query.(isset($_POST['block']) ? "true" : "false").");";
             #block is true if set; else it's false
             #...mother of all queries
 
