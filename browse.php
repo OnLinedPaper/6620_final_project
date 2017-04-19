@@ -71,7 +71,7 @@ function saveDownload(id)
     $query = "SELECT media.media_id, media.name, media.path, account.account_id, account.username, media.type, interaction.blocked ";
     $query = $query."FROM media ";
     $query = $query."JOIN account ON media.account_id = account.account_id ";
-    $query = $query."LEFT JOIN interaction ON (media.account_id = interaction.account_id AND ".$_SESSION['account_id']." = interaction.target_id";
+    $query = $query."LEFT JOIN interaction ON (media.account_id = interaction.account_id AND ".$_SESSION['account_id']." = interaction.target_id);";
     $result = mysql_query( $query );
     #media_id, name, path, account_id, username, type
     if (!$result){
