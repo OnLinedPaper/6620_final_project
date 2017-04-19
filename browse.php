@@ -153,7 +153,7 @@ function saveDownload(id)
             </td>
             <td>
                 <!--upload time-->
-                Uploaded on <?php echo $upload_time ?>
+                Uploaded on <?php echo $upload_time ?> by <a href="profile.php?id=<?php echo $uploader_id ?>"><?php echo $uploader_username; ?></a>
             </td>
             <td>
                 <!--views-->
