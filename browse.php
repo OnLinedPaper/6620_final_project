@@ -113,7 +113,7 @@ function saveDownload(id)
                 $uploader_username = $result_row[4];
                 $type = $result_row[5];
 
-                if($category=="all" or substr($type,0,5)==$category){
+                if($category=="all" or substr($type,0,5)==$category or ($category=="other" and substr($type,0,5) != ("video" or "image"))){
         ?>
              <tr valign="top">
             <td>
