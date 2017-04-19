@@ -50,9 +50,14 @@ if(!file_exists($dirfile))
                     $result="0";
                     chmod($upfile, 0644);
 
+                    $query = "SELECT media_id FROM media ORDER BY upload_time DESC LIMIT 1;"
+                    #get media_id of most recently uploaded file, hopefully this one
+                    $result = mysql_query($query);
+                    $id = mysql_fetch_row($query);
+
                     $words = explode(" ", $_POST['keywords']);
                     foreach ($words as &$oneword){
-                        echo "<br />".$oneword." S-H-I-T";
+                        $query = "INSERT INTO media_metadata(media_id, keyword) VALUES(".$id[0].", ".$oneword.");";
                     }
                 }
             }
