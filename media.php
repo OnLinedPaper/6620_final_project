@@ -32,7 +32,7 @@ if(isset($_GET['id'])) {
         $query = $query.$_GET['id'].", ";
         $query = $query.$_SESSION['account_id'].", ";
         $query = $query."\"".$_POST['comment']."\");";
-        echo $query."<br />S-H-I-T<br />";
+        echo "<b>Comment added.<br /></b>";
 
         $result = mysql_query($query);
     }
