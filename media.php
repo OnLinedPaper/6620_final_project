@@ -74,7 +74,7 @@ if(isset($_GET['id'])) {
 
     #insert comment form
     ?>
-    <form action="media.pgp?id=<?php echo $_GET['id'] ?>" method="post">
+    <form action="media.php?id=<?php echo $_GET['id'] ?>" method="post">
         <input type="textarea" name="comment" rows="4" cols="40" />
         <input type="submit" name="submit" value="Submit comment" />
     </form>
