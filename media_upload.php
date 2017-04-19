@@ -27,8 +27,8 @@ session_start();
    Add a Media: <label style="color:#663399"><em> (Each file limit 10M)</em></label><br/>
    <input  name="file" type="file" size="50" />
 
-    <input value="Upload" name="submit" type="submit" />
-    <input type="textarea" name="keywords" />
+    <input value="Upload" name="submit" type="submit" /><br />
+    <input type="textarea" name="keywords" rows="4" cols="40"/>
   </p>
 
 
