@@ -13,3 +13,6 @@ CREATE TABLE interaction(account_id INT, target_id INT, contact TINYINT(1), frie
 CREATE TABLE comments(media_id INT, account_id INT, comment VARCHAR(2000));
 
 CREATE TABLE media_metadata(media_id INT, keyword VARCHAR(40) PRIMARY KEY (media_id, keyword));
+
+CREATE TABLE favourite(account_id INT NOT NULL, media_id INT NOT NULL, PRIMARY KEY(account_id, media_id), FOREIGN KEY(account_id) REFERENCES account(account_id) ON DELETE CASCADE, FOREIGN KEY(media_id) REFERENCES media(media_id) ON DELETE CASCADE);
+ 
