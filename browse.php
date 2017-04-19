@@ -80,6 +80,7 @@ function saveDownload(id)
     }
 
     $query = $query.";";
+    echo "<br />".$query."<br />S-H-I-T<br />";
 
     $result = mysql_query( $query );
     #media_id, name, path, account_id, username, type
