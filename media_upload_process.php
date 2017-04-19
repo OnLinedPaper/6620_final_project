@@ -53,7 +53,7 @@ if(!file_exists($dirfile))
                     $query = "SELECT media_id FROM media ORDER BY upload_time DESC LIMIT 1;";
                     #get media_id of most recently uploaded file, hopefully this one
                     $result = mysql_query($query);
-                    $id = mysql_fetch_row($query);
+                    $id = mysql_fetch_row($result);
 
                     $words = explode(" ", $_POST['keywords']);
                     foreach ($words as &$oneword){
