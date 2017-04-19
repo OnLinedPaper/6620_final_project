@@ -36,6 +36,11 @@ if(isset($_GET['id'])) {
 
         $result = mysql_query($query);
     }
+    else{
+        #increment view by one (don't increment view after every comment)
+        $query = "UPDATE TABLE media SET views = views + 1;";
+        $result - mysql_query($query);
+    }
 
 
     $query = "SELECT name, path, type, upload_time, account_id FROM media WHERE media_id='".$_GET['id']."'";
