@@ -24,7 +24,7 @@
             {
                 #no contact info yet exists. make a new contact.
 
-                $query = "INSERT INTO interaction (account_id, target_id, contact, friend, foe, blocked) VALUES (";
+                $query = "INSERT INTO interaction (account_id, target_id, contact, friend, foe, blocked, media_blocked) VALUES (";
                 #initial statement
                 $query = $query.$_SESSION['account_id'].", ";
                 #add the account id
@@ -36,8 +36,10 @@
                 #friend is true if that's the radio selected; else it's false
                 $query = $query.(isset($_POST['friendfoe']) ? (($_POST['friendfoe'] == "foe") ? "true" : "false") : "false").", ";
                 #foe is true if that's the radio selected; else it's false
-                $query = $query.(isset($_POST['block']) ? "true" : "false").");";
+                $query = $query.(isset($_POST['block']) ? "true" : "false").", ";
                 #block is true if set; else it's false
+                $query = $query.(isset($_POST['media_block']) ? "true" : "false").");";
+                #media_block is true if set, false otherwise
                 #...mother of all queries
 
                 $result = mysql_query($query);
@@ -57,8 +59,9 @@
                 #friend is true if that's the radio selected; else it's false
                 $query = $query."foe = ".(isset($_POST['friendfoe']) ? (($_POST['friendfoe'] == "foe") ? "true" : "false") : "false").", ";
                 #foe is true if that's the radio selected; else it's false
-                $query = $query."blocked = ".(isset($_POST['block']) ? "true" : "false")." ";
+                $query = $query."blocked = ".(isset($_POST['block']) ? "true" : "false").", ";
                 #block is true if set; else it's false
+                $query = $query."media_blocked = ".(isset($_POST['media_block']) ? "true" : "false")." ";
                 $query = $query."WHERE account_id = ".$_SESSION['account_id']." AND target_id = ".$_GET['id'].";";
                 #...mother of all queries
 
@@ -85,6 +88,7 @@
                     <input type="radio" name="friendfoe" value="friend" />Set friend<br />
                     <input type="radio" name="friendfoe" value="foe" />Set foe<br />
                     <input type="checkbox" name="block" value="block" />Block user<br />
+                    <input type="checkbox" name="media_block" value="media_block" />Media block user<br />
                     <input name="submit" type="submit" value="Submit" />
                     <input type="reset" value = "Reset" /><br />
                 </form>
