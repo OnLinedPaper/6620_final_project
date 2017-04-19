@@ -51,7 +51,7 @@ if(isset($_POST['submit'])) {
     </table>
     </form>
 
-<?php
+<!--<?php
   if(isset($login_error))
    {  echo "<div id='passwd_result'>".$login_error."</div>";}
-?>
+?>-->
