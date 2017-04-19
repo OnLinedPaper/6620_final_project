@@ -140,7 +140,7 @@ function saveDownload(id)
 
                 if(!$blocked and ($category=="all" or substr($type,0,5)==$category or ($category=="other" and substr($type,0,5) != "video" and substr($type,0,5) != "image"))){
         ?>
-             <tr style="width:100%">
+        <tr>
             <td>
                     <?php
                         echo $mediaid;  //mediaid
