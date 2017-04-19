@@ -59,8 +59,8 @@ if(isset($_GET['id'])) {
     if(substr($type,0,5)=="image") //view image
     {
         echo "Viewing Picture: ".$filename."<br>";
-        echo "(uploaded on ".$date.")<br><br>";
-        echo "Views: ".$views;
+        echo "(uploaded on ".$date.")<br>";
+        echo "Views: ".$views."<br /><br />";
         echo "<img src='".str_replace(' ', '+', $filepath)."' alt='".$filename."'/>";
     }
     elseif(substr($type,0,5)=="video") //view video
