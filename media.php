@@ -39,7 +39,7 @@ if(isset($_GET['id'])) {
     else{
         #increment view by one (don't increment view after every comment)
         $query = "UPDATE TABLE media SET views = views + 1;";
-        $result - mysql_query($query);
+        $result = mysql_query($query);
     }
 
 
