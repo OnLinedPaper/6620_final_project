@@ -59,6 +59,20 @@ if(isset($_GET['id'])) {
     {
         echo "alert! unsupported file type: ".$type;
     }
+
+    #comments section
+    $comment_query = "SELECT comments.account_id, comments.comment, account.username FROM comments JOIN account ON comments.account_id = account.account_id WHERE comments.account_id = $_GET['id']";
+    #get all comments whose media id is the currently viewed media
+    $comment_result = mysql_query($comment_query);
+    while ($comment_row = mysql_fetch_row($comment_result)){
+        #for each comment
+        $account_id = $comment_row[0];
+        $comment_str = $comment_row[1];
+        $username = $comment_row[2];
+        echo "<br />Account: ".$account_id."<br />User: ".$username."<br />\"".$comment_str."\"<br />";
+    }
+
+
 }
 else
 {
