@@ -71,7 +71,16 @@ function saveDownload(id)
     $query = "SELECT media.media_id, media.name, media.path, account.account_id, account.username, media.type, interaction.media_blocked ";
     $query = $query."FROM media ";
     $query = $query."JOIN account ON media.account_id = account.account_id ";
-    $query = $query."LEFT JOIN interaction ON (media.account_id = interaction.account_id AND ".$_SESSION['account_id']." = interaction.target_id);";
+    $query = $query."LEFT JOIN interaction ON (media.account_id = interaction.account_id AND ".$_SESSION['account_id']." = interaction.target_id) ";
+
+    if(isset($_POST['submit2'])){
+        if($_POST['order'] == 'recent'){
+            $query = $query."ORDER BY media.upload_time DESC;";
+        }
+    }
+    
+    $query = $query.";";
+
     $result = mysql_query( $query );
     #media_id, name, path, account_id, username, type
     if (!$result){
@@ -83,21 +92,20 @@ function saveDownload(id)
     <div style="background:#339900;color:#FFFFFF; width:150px;">Uploaded Media</div>
     <form action="browse.php" method="post">
         <select name="category">
-            <option value="all">
-                (All media)
-            </option>
-            <option value="image">
-                Images
-            </option>
-            <option value="video">
-                Videos
-            </option>
-            <option value="other">
-                Other
-            </option> <br />
+            <option value="all">(All media)</option>
+            <option value="image">Images</option>
+            <option value="video">Videos</option>
+            <option value="other">Other</option> <br />
             <input name="submit" type="submit" value="Submit" />
         </select>
+    </form>
 
+    <form action="browse.php" methond="post">
+        <select name="order">
+            <option value="all">(Unordered)</option>
+            <option value="recent">Most Recent</option>
+            <input name="submit2" type="submit" value="Submit" />
+        </select>
     </form>
 
     <!-- Display uploaded media as a table of links and IDs -->
