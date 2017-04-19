@@ -37,6 +37,9 @@
 
             $result = mysql_query($query);
         }
+        else {
+            echo "S-H-I-T";
+        }
 
 
         if(isset($_GET['id']) and $_GET['id'] != ""){
