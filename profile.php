@@ -17,7 +17,7 @@
 
         #this part deals with contact, friend/for, blocking
         if(isset($_POST['submit'])){
-            $query = "INSERT INTO interaction (account_id, target_id, contact, friend, foe, blocked) VALUES ($_SESSION['account_id'], $_GET['id'], isset($_POST['contact']) ? true : false, isset($_POST['friendfoe']) ? (($_POST['friendfoe'] == \"friend\") ? true : false) : false, isset($_POST['friendfoe']) ? (($_POST['friendfoe'] == \"foe\") ? true : false) : false, isset($_POST['block']) ? true : false)";
+            $query = "INSERT INTO interaction (account_id, target_id, contact, friend, foe, blocked) VALUES (".$_SESSION['account_id'].", ".$_GET['id'].", ".(isset($_POST['contact']) ? true : false).", ".(isset($_POST['friendfoe']) ? (($_POST['friendfoe'] == "friend") ? true : false) : false).", ".isset($_POST['friendfoe']) ? (($_POST['friendfoe'] == "foe") ? true : false) : false).", ".isset($_POST['block']) ? true : false);"
             #mother of all queries
 
             $result = mysql_query($query);
