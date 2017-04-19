@@ -35,6 +35,14 @@ function saveDownload(id)
         }
     ?>
 
+    <?php
+    #for viewing specific media
+        if(isset($_POST['submit'])){
+            echo $_POST['category'];
+        }
+    ?>
+
+
 <p>Welcome <?php echo $_SESSION['username'];?><br>
     Your account number is <?php echo $_SESSION['account_id'] ?><br>
 <a href="update_profile.php">Update Profile</a>
