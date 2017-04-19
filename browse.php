@@ -26,7 +26,7 @@ function saveDownload(id)
         padding: 4px;
     }
     body{
-        margin:0;
+        padding:0;
     }
 </style>
 </head>
