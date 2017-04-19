@@ -60,6 +60,14 @@ if(isset($_GET['id'])) {
         echo "alert! unsupported file type: ".$type;
     }
 
+    #insert comment form
+    ?>
+    <form action="media.pgp?id=<?php echo $_GET['id'] ?>" method="post">
+        <input type="textarea" name="comment" rows="4" cols="40" />
+        <input type="submit" name="submit" value="Submit comment" />
+    </form>
+
+    <?php
     #comments section
     $comment_query = "SELECT comments.account_id, comments.comment, account.username FROM comments JOIN account ON comments.account_id = account.account_id WHERE comments.media_id = ".$_GET['id'];
     #get all comments whose media id is the currently viewed media
