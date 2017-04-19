@@ -135,9 +135,11 @@ function saveDownload(id)
                             <a href="profile.php?id=<?php echo $uploader_id ?>"><?php echo $uploader_username; ?></a>
                         </td>
                         <td>
-                            if(<?php $blocked ?>){
-                                S-H-I-T
+                            <?php
+                            if($blocked){
+                                echo "S-H-I-T"
                             }
+                            ?>
                         </td>
         </tr>
             <?php
