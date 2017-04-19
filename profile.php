@@ -25,13 +25,14 @@
             #echo user id and username
             if($_GET['id'] != $_SESSION['account_id']){
                 #this is someone else's page.
-                echo "S-H-I-T<br /><br />";
                 ?>
                 <form action="profile.php?id=<?php echo $_GET['id'] ?>" method="post">
                     <input type="checkbox" name="contact" value="add" />Add contact<br />
                     <input type="radio" name="friendfoe" value="friend" />Set friend<br />
                     <input type="radio" name="friendfoe" value="friend" />Set foe<br />
                     <input type="checkbox" name="block" value="block" />Block user<br />
+                    <input type="submit" value="Submit" />
+                    <input type="reset" value = "Reset" /><br />
                 </form>
                 <?php
             }
