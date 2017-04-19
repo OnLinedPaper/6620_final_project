@@ -11,3 +11,5 @@ CREATE TABLE interaction(account_id INT, target_id INT, contact TINYINT(1), frie
     /* account_id, target_id, contact, friend, foe, blocked, media_blocked */
 
 CREATE TABLE comments(media_id INT, account_id INT, comment VARCHAR(2000));
+
+CREATE TABLE media_metadata(media_id INT, keyword VARCHAR(40));

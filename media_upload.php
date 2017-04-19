@@ -28,6 +28,7 @@ session_start();
    <input  name="file" type="file" size="50" />
 
     <input value="Upload" name="submit" type="submit" />
+    <input type="textarea" name="keywords" />
   </p>
 
 
