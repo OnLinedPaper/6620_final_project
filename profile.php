@@ -17,6 +17,18 @@
 
         #this part deals with contact, friend/for, blocking
         if(isset($_POST['submit'])){
+            $testquery = "SELECT * FROM interaction WHERE account_id = ".$_SESSION['account_id']." AND target_id = ".$_GET['id'];
+
+            $testresult = mysql_query($testquery);
+            if(mysql_num_rows($testresult) == 0)
+            {
+                echo "S-H-I-T";
+            }
+            else {
+                echo "B-I-T-C-H";
+            }
+
+
             $query = "INSERT INTO interaction (account_id, target_id, contact, friend, foe, blocked) VALUES (";
             #initial statement
             $query = $query.$_SESSION['account_id'].", ";
@@ -36,9 +48,6 @@
             echo "<br /><br />".$query."<br /><br />";
 
             $result = mysql_query($query);
-        }
-        else {
-            echo "<br /><br />S-H-I-T<br /><br />";
         }
 
 
