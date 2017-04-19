@@ -38,7 +38,7 @@ if(isset($_GET['id'])) {
     }
 
 
-    $query = "SELECT name, path, type, upload_time FROM media WHERE media_id='".$_GET['id']."'";
+    $query = "SELECT name, path, type, upload_time, account_id FROM media WHERE media_id='".$_GET['id']."'";
     $result = mysql_query( $query );
     #name, path, type, upload_time
     $result_row = mysql_fetch_row($result);
@@ -49,6 +49,7 @@ if(isset($_GET['id'])) {
     $filepath=$result_row[1];
     $type=$result_row[2];
     $date=$result_row[3];
+    $account_id=$result_row[4];
     #expects type to be a string
     if(substr($type,0,5)=="image") //view image
     {
@@ -74,6 +75,7 @@ if(isset($_GET['id'])) {
     }
 
     #insert comment form
+    $allowed_query = "";
     ?>
     <form action="media.php?id=<?php echo $_GET['id'] ?>" method="post">
         <input type="textarea" name="comment" rows="4" cols="40" />
