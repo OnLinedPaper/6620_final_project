@@ -64,6 +64,7 @@
 
                 $result = mysql_query($query);
             }
+            echo "<br />user relations updated<br />";
         }
 
 
