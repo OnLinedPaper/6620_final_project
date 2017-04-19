@@ -75,10 +75,10 @@ function saveDownload(id)
 
     if(isset($_POST['submit2'])){
         if($_POST['order'] == 'recent'){
-            $query = $query."ORDER BY media.upload_time DESC;";
+            $query = $query."ORDER BY media.upload_time ASC;";
         }
     }
-    
+
     $query = $query.";";
 
     $result = mysql_query( $query );
