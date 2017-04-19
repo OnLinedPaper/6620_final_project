@@ -38,8 +38,12 @@ function saveDownload(id)
     <?php
     #for viewing specific media
         if(isset($_POST['submit'])){
-            echo $_POST['category']."S-H-I-T<br />";
+            $category = $_POST['category'];
         }
+        else{
+            $category = "all";
+        }
+        echo $category." B-I-T-C-H<br />";
     ?>
 
 
