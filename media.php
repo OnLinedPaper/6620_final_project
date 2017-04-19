@@ -25,6 +25,18 @@
 
 <?php
 if(isset($_GET['id'])) {
+
+    if(isset($_POST['submit'])){
+        #insert a comment.
+        $query = "INSERT INTO comments (media_id, account_id, comment) VALUES (";
+        $query = $query."media_id = ".$_GET['id'].", ";
+        $query = $query."account_id = ".$_SESSION['account_id'].", ";
+        $query = $query."comment = ".$_POST['comment'].");"
+
+        $result - mysql_query($query);
+    }
+
+
     $query = "SELECT name, path, type, upload_time FROM media WHERE media_id='".$_GET['id']."'";
     $result = mysql_query( $query );
     #name, path, type, upload_time
