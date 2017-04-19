@@ -98,7 +98,7 @@ function saveDownload(id)
         foreach($words as &$oneword){
             $query = $query."media_metadata.keyword = \"".$oneword."\" OR ";
         }
-        $query = $query."media_metadata.keyword = " ");";
+        $query = $query."media_metadata.keyword = \" \");";
     }
     $query = $query.";";
 
