@@ -56,9 +56,9 @@ function saveDownload(id)
 <!-- This section displays the uploaded media -->
 <?php
 
-    $query = "SELECT media.media_id, media.name, media.path, account.account_id, account.username from media join account on media.account_id = account.account_id";
+    $query = "SELECT media.media_id, media.name, media.path, account.account_id, account.username, interaction.media_blocked from media join account on media.account_id = account.account_id join interaction on media.account_id = interaction.account_id";
     $result = mysql_query( $query );
-    #media_id, name, type, path, last_access_time, account_id, ip, upload_time, account_id, type, username, password, email
+    #media_id, name, path, account_id, username, media_blocked
     if (!$result){
        die ("Could not query the media table in the database: <br />". mysql_error());
     }
