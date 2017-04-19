@@ -37,13 +37,13 @@ function saveDownload(id)
 
     <?php
     #for viewing specific media
+    #(defaults to "all")
         if(isset($_POST['submit'])){
             $category = $_POST['category'];
         }
         else{
             $category = "all";
         }
-        echo $category." B-I-T-C-H<br />";
     ?>
 
 
@@ -73,7 +73,7 @@ function saveDownload(id)
     $query = $query."JOIN account ON media.account_id = account.account_id ";
     #$query = $query."LEFT JOIN interaction ON media.account_id = interaction.account_id ";
     $result = mysql_query( $query );
-    #media_id, name, path, account_id, username
+    #media_id, name, path, account_id, username, type
     if (!$result){
        die ("Could not query the media table in the database: <br />". mysql_error());
     }
@@ -111,6 +111,9 @@ function saveDownload(id)
                 $filenpath = $result_row[2];
                 $uploader_id = $result_row[3];
                 $uploader_username = $result_row[4];
+                $type = $result_row[5];
+
+                if($category=="all" or substr($type,0,5)==$category){
         ?>
              <tr valign="top">
             <td>
@@ -132,6 +135,7 @@ function saveDownload(id)
                         </td>
         </tr>
             <?php
+                }
             }
         ?>
     </table>
