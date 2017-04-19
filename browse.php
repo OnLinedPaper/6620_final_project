@@ -112,6 +112,7 @@ function saveDownload(id)
                 $uploader_id = $result_row[3];
                 $uploader_username = $result_row[4];
                 $type = $result_row[5];
+                $blocked = $result_row[6];
 
                 if($category=="all" or substr($type,0,5)==$category or ($category=="other" and substr($type,0,5) != "video" and substr($type,0,5) != "image")){
         ?>
@@ -132,6 +133,11 @@ function saveDownload(id)
                         </td>
                         <td>
                             <a href="profile.php?id=<?php echo $uploader_id ?>"><?php echo $uploader_username; ?></a>
+                        </td>
+                        <td>
+                            if(<?php $blocked ?>){
+                                S-H-I-T
+                            }
                         </td>
         </tr>
             <?php
