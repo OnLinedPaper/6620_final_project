@@ -49,7 +49,7 @@ if(isset($_GET['id'])) {
     $filepath=$result_row[1];
     $type=$result_row[2];
     $date=$result_row[3];
-    $account_id=$result_row[4];
+    $uploader_id=$result_row[4];
     #expects type to be a string
     if(substr($type,0,5)=="image") //view image
     {
@@ -75,14 +75,23 @@ if(isset($_GET['id'])) {
     }
 
     #insert comment form
-    $allowed_query = "";
+    $allowed_query = "SELECT blocked FROM interaction WHERE account_id=";
+    $allowed_query = $allowed_query.$uploader_id." AND target_id=";
+    $allowed_query = $allowed_query.$_SESSION['id'].";";
+
+    $allowed_result = mysql_query($allowed_query);
+    $allowed_row = mysql_fetch_row($allowed_result);
+
+    if(!$allowed_row[0]){
+        #if not comment blocked
     ?>
-    <form action="media.php?id=<?php echo $_GET['id'] ?>" method="post">
-        <input type="textarea" name="comment" rows="4" cols="40" />
-        <input type="submit" name="submit" value="Submit comment" />
-    </form>
+        <form action="media.php?id=<?php echo $_GET['id'] ?>" method="post">
+            <input type="textarea" name="comment" rows="4" cols="40" />
+            <input type="submit" name="submit" value="Submit comment" />
+        </form>
 
     <?php
+    }
     #comments section
     $comment_query = "SELECT comments.account_id, comments.comment, account.username FROM comments JOIN account ON comments.account_id = account.account_id WHERE comments.media_id = ".$_GET['id'];
     #get all comments whose media id is the currently viewed media
