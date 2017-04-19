@@ -77,7 +77,7 @@ function saveDownload(id)
 ?>
 
     <div style="background:#339900;color:#FFFFFF; width:150px;">Uploaded Media</div>
-    <form action="media.php" method="post">
+    <form action="browse.php" method="post">
         <select name="category">
             <option value="all">
                 (All media)
