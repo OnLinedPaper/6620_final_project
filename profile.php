@@ -38,7 +38,7 @@
             $result = mysql_query($query);
         }
         else {
-            echo "S-H-I-T";
+            echo "<br /><br />S-H-I-T<br /><br />";
         }
 
 
@@ -59,7 +59,7 @@
                     <input type="radio" name="friendfoe" value="friend" />Set friend<br />
                     <input type="radio" name="friendfoe" value="foe" />Set foe<br />
                     <input type="checkbox" name="block" value="block" />Block user<br />
-                    <input type="submit" value="Submit" />
+                    <input name="submit" type="submit" value="Submit" />
                     <input type="reset" value = "Reset" /><br />
                 </form>
                 <?php
