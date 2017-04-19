@@ -22,10 +22,51 @@
             $testresult = mysql_query($testquery);
             if(mysql_num_rows($testresult) == 0)
             {
-                echo "S-H-I-T";
+                #no contact info yet exists. make a new contact.
+
+                $query = "INSERT INTO interaction (account_id, target_id, contact, friend, foe, blocked) VALUES (";
+                #initial statement
+                $query = $query.$_SESSION['account_id'].", ";
+                #add the account id
+                $query = $query.$_GET['id'].", ";
+                #add the target id
+                $query = $query.(isset($_POST['contact']) ? "true" : "false").", ";
+                #contact is true if it's checked, otherwise false
+                $query = $query.(isset($_POST['friendfoe']) ? (($_POST['friendfoe'] == "friend") ? "true" : "false") : "false").", ";
+                #friend is true if that's the radio selected; else it's false
+                $query = $query.(isset($_POST['friendfoe']) ? (($_POST['friendfoe'] == "foe") ? "true" : "false") : "false").", ";
+                #foe is true if that's the radio selected; else it's false
+                $query = $query.(isset($_POST['block']) ? "true" : "false").");";
+                #block is true if set; else it's false
+                #...mother of all queries
+
+                echo "<br /><br />".$query."<br /><br />";
+
+                $result = mysql_query($query);
             }
             else {
-                echo "B-I-T-C-H";
+                #contact info exists. update it.
+
+                $query = "UPDATE interaction SET ";
+                #initial statement
+                $query = "account_id = ".$query.$_SESSION['account_id'].", ";
+                #add the account id
+                $query = "target_id = ".$query.$_GET['id'].", ";
+                #add the target id
+                $query = "contact = ".$query.(isset($_POST['contact']) ? "true" : "false").", ";
+                #contact is true if it's checked, otherwise false
+                $query = "friend = ".$query.(isset($_POST['friendfoe']) ? (($_POST['friendfoe'] == "friend") ? "true" : "false") : "false").", ";
+                #friend is true if that's the radio selected; else it's false
+                $query = "foe = ".$query.(isset($_POST['friendfoe']) ? (($_POST['friendfoe'] == "foe") ? "true" : "false") : "false").", ";
+                #foe is true if that's the radio selected; else it's false
+                $query = "blocked = ".$query.(isset($_POST['block']) ? "true" : "false")." ";
+                #block is true if set; else it's false
+                $query = $query."WHERE account_id = ".$_SESSION['account_id']." AND target_id = ".$_GET['id'].";";
+                #...mother of all queries
+
+                echo "<br /><br />".$query."<br /><br />";
+
+                $result = mysql_query($query);
             }
 
 
