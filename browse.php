@@ -102,7 +102,7 @@ function saveDownload(id)
         </select>
     </form>
 
-    <form action="browse.php" methond="post">
+    <form action="browse.php" method="post">
         <select name="order">
             <option value="all">(Unordered)</option>
             <option value="recent">Most Recent</option>
