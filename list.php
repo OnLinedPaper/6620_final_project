@@ -31,7 +31,7 @@
             echo "<b>list created.</b><br />";
         }
         if(isset($_POST['addto'])){
-            #add to playlist
+            #add to list
             $query = "SELECT name FROM list WHERE list_id = ".$_POST['addname']." LIMIT 1";
             #get list name
             $result = mysql_query($query);

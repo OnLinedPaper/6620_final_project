@@ -11,9 +11,24 @@
             <?php
         }
         echo "<a href=\"browse.php\">Back to browse</a><br />";
-        ?>
 
-        <?php
+        if(isset($_POST['view'])){
+            #view list
+            $query = "SELECT name FROM list WHERE list_id = ".$_POST['addname']." LIMIT 1";
+            #get list name
+            $result = mysql_query($query);
+            $result_row = mysql_fetch_row($result);
+            $list_name = $result_row[0];
+
+            $query = "SELECT media_id FROM list WHERE list_id = ".$_POST['addname'];
+            $result = mysql_query($query);
+
+            while($result_row = mysql_fetch_row($result)){
+                echo $result_row[0].": S-H-I-T<br />";
+            }
+        }
+
+
             $query = "SELECT DISTINCT name, list_id FROM list WHERE account_id = ".$_SESSION['account_id'];
             $result = mysql_query($query);
         ?>
