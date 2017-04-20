@@ -53,10 +53,12 @@ if(!file_exists($dirfile))
                     $result = mysql_query($query);
                     $id = mysql_fetch_row($result);
 
-                    $words = explode(" ", $_POST['keywords']);
-                    foreach ($words as &$oneword){
-                        $query = "INSERT INTO media_metadata(media_id, keyword) VALUES(".$id[0].", \"".$oneword."\");";
-                        $result = mysql_query($query);
+                    if($_POST['keywords'] != ""){
+                        $words = explode(" ", $_POST['keywords']);
+                        foreach ($words as &$oneword){
+                            $query = "INSERT INTO media_metadata(media_id, keyword) VALUES(".$id[0].", \"".$oneword."\");";
+                            $result = mysql_query($query);
+                        }
                     }
                 }
             }
