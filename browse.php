@@ -178,7 +178,7 @@ function saveDownload(id)
             </td>
             <td>
                 <!--list add link-->
-                <a href="list.php?id=<?php echo $mediaid ?>">Add to list</a>
+                <a href="list.php?id=<?php echo $mediaid ?>" target="_blank">Add to list</a>
             </td>
         </tr>
             <?php
