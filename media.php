@@ -27,14 +27,19 @@
 if(isset($_GET['id'])) {
 
     if(isset($_POST['submit'])){
-        #insert a comment.
-        $query = "INSERT INTO comments (media_id, account_id, comment) VALUES (";
-        $query = $query.$_GET['id'].", ";
-        $query = $query.$_SESSION['account_id'].", ";
-        $query = $query."\"".$_POST['comment']."\");";
-        echo "<b>Comment added.<br /></b>";
+            #insert a comment.
+            if($_POST['comment'] != "" and !ctype_space($_POST['comment'])){
+            $query = "INSERT INTO comments (media_id, account_id, comment) VALUES (";
+            $query = $query.$_GET['id'].", ";
+            $query = $query.$_SESSION['account_id'].", ";
+            $query = $query."\"".$_POST['comment']."\");";
+            echo "<b>Comment added.<br /></b>";
 
-        $result = mysql_query($query);
+            $result = mysql_query($query);
+        }
+        else{
+            echo "<b>Comment cannot be empty.</b><br />";
+        }
     }
     else{
         #increment view by one (don't increment view after every comment)
