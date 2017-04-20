@@ -53,7 +53,7 @@ if(!file_exists($dirfile))
                     $result = mysql_query($query);
                     $id = mysql_fetch_row($result);
 
-                    if($_POST['keywords'] != ""){
+                    if($_POST['keywords'] != "" and !ctype_space($_POST['keywords'])){
                         $words = explode(" ", $_POST['keywords']);
                         foreach ($words as &$oneword){
                             $query = "INSERT INTO media_metadata(media_id, keyword) VALUES(".$id[0].", \"".$oneword."\");";

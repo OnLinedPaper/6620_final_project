@@ -25,7 +25,7 @@
                 #no playlists exist yet
                 $new_list_id = 0;
             }
-            if($_POST['newname'] != ""){
+            if($_POST['newname'] != "" and !ctype_space($_POST['newname'])){
                 $query = "INSERT INTO list(list_id, account_id, name) VALUES(".$new_list_id.", ".$_SESSION['account_id'].", \"".$_POST['newname']."\");";
                 $result = mysql_query($query);
                 echo "<b>list created.</b><br />";
