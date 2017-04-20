@@ -55,10 +55,22 @@
                 #create the table if it's not there
                 $query = "INSERT INTO list(account_id, name) VALUES(".$_SESSION['account_id'].", \"favorites\");";
                 $result = mysql_query($query);
+
+                $query = "SELECT list_id FROM list WHERE account_id = ".$_SESSION['account_id']." AND name = \"favorites\";";
+                $result = mysql_query($query);
+                #get the new list ID
+                $result_row = mysql_fetch_row($result);
+                $list_id = $result_row[0];
             }
             else{
-                echo "S-H-I-T<br />";
+                $list_id = $result_row[0];
             }
+            $query = "INSERT INTO list(list_id, account_id, media_id, name) VALUES(";
+            $query = $query.$list_id.", ";
+            $query = $query.$_SESSION['account_id'].", ";
+            $query = $query.$_GET['id'].", ";
+            $query = $query."\"favorites\");";
+
         }
     ?>
 
