@@ -25,10 +25,14 @@
                 #no playlists exist yet
                 $new_list_id = 0;
             }
-
-            $query = "INSERT INTO list(list_id, account_id, name) VALUES(".$new_list_id.", ".$_SESSION['account_id'].", \"".$_POST['newname']."\");";
-            $result = mysql_query($query);
-            echo "<b>list created.</b><br />";
+            if($_POST['newname'] != ""){
+                $query = "INSERT INTO list(list_id, account_id, name) VALUES(".$new_list_id.", ".$_SESSION['account_id'].", \"".$_POST['newname']."\");";
+                $result = mysql_query($query);
+                echo "<b>list created.</b><br />";
+            }
+            else{
+                echo "<b>name cannot be empty</b><br />";
+            }
         }
         if(isset($_POST['addto'])){
             #add to list
