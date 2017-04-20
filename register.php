@@ -16,6 +16,12 @@ if(isset($_POST['submit'])) {
     else if($_POST['username']==""){
         $register_error = "username is required.";
     }
+    else if($_POST['email']==""){
+        $register_error = "email is required.";
+    }
+    else if(!strpos("@", $_POST['email'])){
+        $register_error = "email is invalid";
+    }
     else {
         $check = user_exist_check($_POST['username'], $_POST['passowrd1'], $_POST['email']);
         if($check == 1){
