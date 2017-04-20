@@ -10,7 +10,7 @@
             <meta http-equiv="refresh" content="0; url=http://webapp.cs.clemson.edu/~ndreed/metube/index.php" />
             <?php
         }
-        echo "<a href=\"browse.php\">Back to browse</a>";
+        echo "<a href=\"browse.php\">Back to browse</a><br />";
 
         if(isset($_POST['create'])){
             #create playlist
