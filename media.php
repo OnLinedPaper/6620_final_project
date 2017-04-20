@@ -93,7 +93,7 @@ if(isset($_GET['id'])) {
         #if not comment blocked
     ?>
         <form action="media.php?id=<?php echo $_GET['id'] ?>" method="post">
-            <textarea name="comment" rows="4" cols="40" />comment</textarea>
+            <textarea name="comment" rows="4" cols="40" maxlength="2000" />comment</textarea>
             <input type="submit" name="submit" value="Submit comment" />
         </form>
 

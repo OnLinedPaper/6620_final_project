@@ -79,11 +79,11 @@
 <a href="browse.php">Back to browse</a>
 
 <form action="update_profile.php" method="post">
-    Username: <input type="text" name="username" value=<?php echo "\"".$curr_username."\""?>> <br>
-    Email: <input type="text" name="email" value=<?php echo "\"".$curr_email."\""?>> <br>
-    New Password: <input  type="password" name="password1"> <br>
-    Repeat New password: <input type="password" name="password2"> <br>
-    Old Password: <input type="password" name="password_old"> (REQUIRED)<br>
+    Username: <input type="text" name="username" maxlength="40" value=<?php echo "\"".$curr_username."\""?>> <br>
+    Email: <input type="text" name="email" maxlength="40" value=<?php echo "\"".$curr_email."\""?>> <br>
+    New Password: <input  type="password" maxlength="40" name="password1"> <br>
+    Repeat New password: <input type="password" maxlength="40" name="password2"> <br>
+    Old Password: <input type="password" maxlength="40" name="password_old"> (REQUIRED)<br>
     <input name="submit" type="submit" value="Submit">
 </form>
 

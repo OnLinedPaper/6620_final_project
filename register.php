@@ -33,9 +33,9 @@ if(isset($_POST['submit'])) {
 ?>
 <form action="register.php" method="post">
     Username: <input type="text" name="username" maxlength="40"> <br>
-    Email: <input type="text" name="email"> <br>
-    Create Password: <input  type="password" name="passowrd1"> <br>
-    Repeat password: <input type="password" name="passowrd2"> <br>
+    Email: <input type="text" name="email" maxlength="40"> <br>
+    Create Password: <input  type="password" name="passowrd1" maxlength="40"> <br>
+    Repeat password: <input type="password" name="passowrd2" maxlength="40"> <br>
     <input name="submit" type="submit" value="Submit">
 </form>
 
