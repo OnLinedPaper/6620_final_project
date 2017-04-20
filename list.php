@@ -14,7 +14,7 @@
 
         if(isset($_POST['create'])){
             #create playlist
-            $query = "SELECT list_id FROM list ORDER BY list_id DESC LIMIT 1;";
+            $query = "SELECT UNIQUE list_id FROM list ORDER BY list_id DESC LIMIT 1;";
             $result = mysql_query($query);
             if($result){
                 $result_row = mysql_fetch_row($result);
