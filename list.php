@@ -63,6 +63,7 @@
                 $list_id = $result_row[0];
             }
             else{
+                $result_row = mysql_fetch_row($result);
                 $list_id = $result_row[0];
             }
             $query = "INSERT INTO list(list_id, account_id, media_id, name) VALUES(";
