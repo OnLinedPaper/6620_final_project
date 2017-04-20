@@ -77,12 +77,11 @@
             }
             else{
 
-                $query = "SELECT list_id FROM list ORDER BY list_id DESC LIMIT 1;";
+                $query = "SELECT list_id FROM list WHERE (account_id = ".$_SESSION['account_id']." AND name=\"favorites\") ORDER BY list_id DESC LIMIT 1;";
                 $result = mysql_query($query);
                 if($result){
                     $result_row = mysql_fetch_row($result);
                     $new_list_id = $result_row[0];
-                    $new_list_id = $new_list_id + 1;
                 }
                 else{
                     #no playlists exist yet
