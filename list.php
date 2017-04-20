@@ -53,7 +53,20 @@
             $result = mysql_query($query);
             if(!$result_row = mysql_fetch_row($result)){
                 #create the table if it's not there
-                $query = "INSERT INTO list(account_id, name) VALUES(".$_SESSION['account_id'].", \"favorites\");";
+
+                $query = "SELECT list_id FROM list ORDER BY list_id DESC LIMIT 1;";
+                $result = mysql_query($query);
+                if($result){
+                    $result_row = mysql_fetch_row($result);
+                    $new_list_id = $result_row[0];
+                    $new_list_id = $new_list_id + 1;
+                }
+                else{
+                    #no playlists exist yet
+                    $new_list_id = 0;
+                }
+
+                $query = "INSERT INTO list(list_id, account_id, name) VALUES(".$new_list_id.", ".$_SESSION['account_id'].", \"favorites\");";
                 $result = mysql_query($query);
 
                 $query = "SELECT list_id FROM list WHERE account_id = ".$_SESSION['account_id']." AND name = \"favorites\";";
@@ -63,11 +76,22 @@
                 $list_id = $result_row[0];
             }
             else{
-                $list_id = $result_row[0];
+
+                $query = "SELECT list_id FROM list ORDER BY list_id DESC LIMIT 1;";
+                $result = mysql_query($query);
+                if($result){
+                    $result_row = mysql_fetch_row($result);
+                    $new_list_id = $result_row[0];
+                    $new_list_id = $new_list_id + 1;
+                }
+                else{
+                    #no playlists exist yet
+                    $new_list_id = 0;
+                }
             }
-            echo $result_row[0]."<br />";
+            echo $result_row[0]."<br />"l
             $query = "INSERT INTO list(list_id, account_id, media_id, name) VALUES(";
-            $query = $query.$list_id.", ";
+            $query = $query.$new_list_id.", ";
             $query = $query.$_SESSION['account_id'].", ";
             $query = $query.$_GET['id'].", ";
             $query = $query."\"favorites\");";
