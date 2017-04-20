@@ -10,10 +10,10 @@ if(isset($_POST['submit'])) {
     if( $_POST['passowrd1'] != $_POST['passowrd2']) {
         $register_error = "Passwords don't match. Try again?";
     }
-    else if(!isset($_POST['passowrd1'])){
+    else if($_POST['passowrd1']==""){
         $register_error = "password is required.";
     }
-    else if(!isset($_POST['username'])){
+    else if($_POST['username']==""){
         $register_error = "username is required.";
     }
     else {
