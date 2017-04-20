@@ -52,7 +52,9 @@
             $query = "SELECT list_id FROM list WHERE account_id = ".$_SESSION['account_id']." AND name = \"favorites\";";
             $result = mysql_query($query);
             if(!$result = mysql_fetch_row($result)){
-                echo "B-I-T-C-H<br />";
+                #create the table if it's not there
+                $query = "INSERT INTO list(account_id, name) VALUES(".$_SESSION['account_id'].", \"favorites\");";
+                $result = mysql_query($query);
             }
             else{
                 echo "S-H-I-T<br />";
