@@ -18,7 +18,7 @@
 
 
     <form action="list.php?id=<?php echo $_GET['id'] ?>" method="post">
-        <textarea name="newname" rows="1" cols="40"/>New playlist name...</textarea>
+        <textarea name="newname" rows="1" cols="40" maxlength="40"/>New playlist name...</textarea>
         <input name="create" type="submit" value="Create" />
     </form>
 
