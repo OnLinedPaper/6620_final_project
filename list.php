@@ -12,7 +12,7 @@
         }
 
         if(isset($_POST['create'])){
-            echo "S-H-I-T<br />";
+            echo $_POST['newname'].": S-H-I-T<br />";
         }
     ?>
 
