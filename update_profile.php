@@ -57,7 +57,7 @@
                 $new_username = $_POST['username'];
             }
 
-            if($_POST['email'] == "" or !strpos("@", $_POST['email'])) {
+            if($_POST['email'] == "") {
                 #they didn't want to change their email or entered a bad one
                 $new_email = $curr_email;
             }
