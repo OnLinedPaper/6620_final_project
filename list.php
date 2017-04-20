@@ -70,6 +70,7 @@
             $query = $query.$_SESSION['account_id'].", ";
             $query = $query.$_GET['id'].", ";
             $query = $query."\"favorites\");";
+            echo $query."<br />";
 
             $result = mysql_query($query);
             echo "<b>Added to favorites.</b><br />";
