@@ -26,7 +26,7 @@
             #skip the empty result
 
             while($result_row = mysql_fetch_row($result)){
-                echo $result_row[0].": S-H-I-T<br />";
+                echo "<a href=\"media.php?id=".$result_row[0]."\" target=\"_blank\">$result_row[0]</a><br />";
             }
         }
 
