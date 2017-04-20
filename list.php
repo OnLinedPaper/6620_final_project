@@ -31,6 +31,7 @@
         }
         if(isset($_POST['addto'])){
             #add to playlist
+            echo $_POST['addname'].": B-I-T-C-H<br />";
             $query = "SELECT name FROM list WHERE list_id = ".$_POST['addname']."LIMIT 1";
             $result = mysql_query($query);
             $result_row = mysql_fetch_row($result);
