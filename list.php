@@ -46,7 +46,7 @@
         <select name="addname">
         <?php
             foreach ($result_row as &$onerow){
-                echo "<option value=\"".$onerow[1]."\">".$onerow[0]."</option>";
+                echo "<option value=\"".$onerow[0]."\">".$onerow[1]."</option>";
             }
         ?>
         </select>
