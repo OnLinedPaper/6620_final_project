@@ -61,7 +61,7 @@ if(isset($_GET['id'])) {
         echo "Viewing Picture: ".$filename."<br>";
         echo "(uploaded on ".$date.")<br>";
         echo "Views: ".$views."<br /><br />";
-        echo "<a href=".str_replace(' ', '+', $filenpath)." download>Download</a>"
+        echo "<a href=".str_replace(' ', '+', $filenpath)." download>Download</a>";
         echo "<img src='".str_replace(' ', '+', $filepath)."' alt='".$filename."'/>";
     }
     elseif(substr($type,0,5)=="video") //view video
