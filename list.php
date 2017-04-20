@@ -15,7 +15,7 @@
             $query = "SELECT list_id FROM list ORDER BY desc LIMIT 1;";
             $result = mysql_query($query);
             $result_row = mysql_fetch_row($result);
-            $new_list_id = $result_row[0] + 1;
+            $new_list_id = $result_row[0];
             if(!$new_list_id){
                 #no playlists exist yet
                 $new_list_id = 0;
