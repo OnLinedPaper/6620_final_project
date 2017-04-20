@@ -69,6 +69,7 @@
         ?>
         <input name="addto" type="submit" value="Add" />
         </select>
+        <input name="fav" type="submit" value="Favorite" />
     </form>
 
 </body>
