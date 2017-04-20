@@ -10,7 +10,7 @@
             <meta http-equiv="refresh" content="0; url=http://webapp.cs.clemson.edu/~ndreed/metube/index.php" />
             <?php
         }
-        echo "<a href=\"browse.php\">Back to browse</a><br />";
+        echo "<a href=\"browse.php\">Back to browse</a><br /><br />";
 
         if(isset($_POST['view'])){
             #view list
