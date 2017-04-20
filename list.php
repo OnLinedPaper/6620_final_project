@@ -12,6 +12,7 @@
         }
 
         if(isset($_POST['create'])){
+            #create playlist
             $query = "SELECT list_id FROM list ORDER BY list_id DESC LIMIT 1;";
             $result = mysql_query($query);
             if($result){
@@ -27,6 +28,13 @@
             $query = "INSERT INTO list(list_id, account_id, name) VALUES(".$new_list_id.", ".$_SESSION['account_id'].", \"".$_POST['newname']."\");";
             $result = mysql_query($query);
             echo "<b>playlist created.</b>";
+        }
+        if(isset($_POST['addto'])){
+            #add to playlist
+            $query = "SELECT name FROM list WHERE list_id = ".$_POST['addname']."LIMIT 1";
+            $result = mysql_query($query);
+            $result_row = mysql_fetch_row($result);
+            echo $result_row[1].": S-H-I-T<br />";
         }
     ?>
 
