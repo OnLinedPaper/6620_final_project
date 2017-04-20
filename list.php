@@ -34,7 +34,7 @@
             $query = "SELECT name FROM list WHERE list_id = ".$_POST['addname']."LIMIT 1";
             $result = mysql_query($query);
             $result_row = mysql_fetch_row($result);
-            echo $result_row[1].": S-H-I-T<br />";
+            echo $result_row[0].": S-H-I-T<br />";
         }
     ?>
 
