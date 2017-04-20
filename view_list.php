@@ -20,8 +20,10 @@
             $result_row = mysql_fetch_row($result);
             $list_name = $result_row[0];
 
-            $query = "SELECT media_id FROM list WHERE list_id = ".$_POST['viewname'];
+            $query = "SELECT DISTINCT media_id FROM list WHERE list_id = ".$_POST['viewname'];
             $result = mysql_query($query);
+            $result_row = mysql_fetch_row($result);
+            #skip the empty result
 
             while($result_row = mysql_fetch_row($result)){
                 echo $result_row[0].": S-H-I-T<br />";
@@ -36,9 +38,7 @@
         <form action="view_list.php?id=<?php echo $_GET['id'] ?>" method="post">
             <select name="viewname">
             <?php
-                $result_row = mysql_fetch_row($result);
-                #pass the empty row
-                
+
                 while($result_row = mysql_fetch_row($result)){
                     echo "<option value=\"".$result_row[1]."\">".$result_row[0]."</option>";
                 }
