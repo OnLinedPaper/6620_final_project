@@ -186,7 +186,8 @@ function saveDownload(id)
             </td>
             <td>
                 <!--add to favourites link-->
-    			<form><input name="add" type="submit" value="Add to Favourites" /></form>
+                <a href="favourites.php?id=<?php echo $mediaid ?>" target="_blank">Add to Favourites</a>
+    			<!--<form><input name="add" type="submit" value="Add to Favourites" /></form>-->
             </td>
             <td>
                 <!--list add link-->
