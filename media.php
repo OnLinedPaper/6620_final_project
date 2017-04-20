@@ -59,7 +59,7 @@ if(isset($_GET['id'])) {
     if(substr($type,0,5)=="image") //view image
     {
         echo "Viewing Picture: ".$filename."<br>";
-        echo "(uploaded on ".$date."<br>";
+        echo "(uploaded on ".$date.")<br>";
         echo "Views: ".$views."<br />";
         echo "<a href=".str_replace(' ', '+', $filepath)." download>Download</a><br /><br />";
         echo "<img src='".str_replace(' ', '+', $filepath)."' alt='".$filename."'/>";
