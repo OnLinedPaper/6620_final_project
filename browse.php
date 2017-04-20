@@ -50,6 +50,13 @@ function saveDownload(id)
             $category = "all";
         }
     ?>
+    
+    <?php
+    #for adding to favourites
+        if(isset($_POST['add'])){
+            echo "Added to your favourites!";
+        }
+    ?>
 
 
 <p>Welcome <?php echo $_SESSION['username'];?><br>
@@ -176,6 +183,10 @@ function saveDownload(id)
             <td>
                 <!--file download link-->
                 <a href="<?php echo str_replace(' ', '+', $filenpath);?>" download>Download</a>
+            </td>
+            <td>
+                <!--add to favourites link-->
+    			<form><input name="add" type="submit" value="Add to Favourites" /></form>
             </td>
             <td>
                 <!--list add link-->
