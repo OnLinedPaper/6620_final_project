@@ -33,9 +33,19 @@
             #add to playlist
             echo $_POST['addname'].": B-I-T-C-H<br />";
             $query = "SELECT name FROM list WHERE list_id = ".$_POST['addname']." LIMIT 1";
+            #get list name
             $result = mysql_query($query);
             $result_row = mysql_fetch_row($result);
-            echo $result_row[0].": S-H-I-T<br />";
+            $list_name = $result_row[0]
+            echo $list_name.": S-H-I-T<br />";
+
+            $query = "INSERT INTO list(list_id, account_id, media_id, name) VALUES(";
+            $query = $query.$_POST['addname'].", ";
+            $query = $query.$_SESSION['account_id'].", ";
+            $query = $query.$_GET['id'].", ";
+            $query = $query.$list_name.");";
+
+            echo $query.": P-H-U-K-K-A<br />";
         }
     ?>
 
