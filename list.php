@@ -56,7 +56,7 @@
     </form>
 
     <?php
-        $query = "SELECT name, list_id FROM list WHERE account_id = ".$_SESSION['account_id'];
+        $query = "SELECT DISTINCT name, list_id FROM list WHERE account_id = ".$_SESSION['account_id'];
         $result = mysql_query($query);
     ?>
 
