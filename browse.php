@@ -54,6 +54,7 @@ function saveDownload(id)
 
 <p>Welcome <?php echo $_SESSION['username'];?><br>
     Your account number is <?php echo $_SESSION['account_id'] ?><br>
+    <a href="<?php echo "profile.php?id=".$_SESSION['account_id'] ?>">Your profile</a>
 <a href="update_profile.php">Update Profile</a>
 </p>
 
