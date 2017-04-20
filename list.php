@@ -88,13 +88,11 @@
                     $new_list_id = 0;
                 }
             }
-            echo $result_row[0]."<br />";
             $query = "INSERT INTO list(list_id, account_id, media_id, name) VALUES(";
             $query = $query.$new_list_id.", ";
             $query = $query.$_SESSION['account_id'].", ";
             $query = $query.$_GET['id'].", ";
             $query = $query."\"favorites\");";
-            echo $query."<br />";
 
             $result = mysql_query($query);
             echo "<b>Added to favorites.</b><br />";
