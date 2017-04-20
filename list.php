@@ -39,14 +39,13 @@
     <?php
         $query = "SELECT name, list_id FROM list WHERE account_id = ".$_SESSION['account_id'];
         $result = mysql_query($query);
-        $result_row = mysql_fetch_row($result);
     ?>
 
     <form action="list.php?id=<?php echo $_GET['id'] ?>" method="post">
         <select name="addname">
         <?php
-            foreach ($result_row as &$onerow){
-                echo "<option value=\"".$onerow[0]."\">".$onerow[1]."</option>";
+            while($result_row = mysql_fetch_row($result)){
+                echo "<option value=\"".$result_row[1]."\">".$result_row[0]."</option>";
             }
         ?>
         </select>
