@@ -40,7 +40,7 @@
         {
             echo "That username is taken already.";
         }
-        else if(!strpos("@", $_POST['email'])){
+        else if(strpos("@", $_POST['email']) == false){
             echo "<b>email is invalid</b><br />";
         }
         else{
