@@ -33,7 +33,7 @@
             $result = mysql_query($query);
         ?>
 
-        <form action="list.php?id=<?php echo $_GET['id'] ?>" method="post">
+        <form action="view_list.php?id=<?php echo $_GET['id'] ?>" method="post">
             <select name="viewname">
             <?php
                 while($result_row = mysql_fetch_row($result)){
