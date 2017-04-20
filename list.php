@@ -26,8 +26,7 @@
 
             $query = "INSERT INTO list(list_id, account_id, name) VALUES(".$new_list_id.", ".$_SESSION['account_id'].", \"".$_POST['newname']."\");";
             $result = mysql_query($query);
-
-            echo $query.": S-H-I-T<br />";
+            echo "<b>playlist created.</b>"
         }
     ?>
 
@@ -35,6 +34,22 @@
     <form action="list.php?id=<?php echo $_GET['id'] ?>" method="post">
         <textarea name="newname" rows="1" cols="40" maxlength="40"/>New playlist name...</textarea>
         <input name="create" type="submit" value="Create" />
+    </form>
+
+    <?php
+        $query = "SELECT name, list_id FROM list WHERE account_id = ".$_SESSION['account_id'];
+        $result = mysql_query($query);
+        $result_row = mysql_fetch_row($result);
+    ?>
+
+    <form action="list.php?id=<?php echo $_GET['id'] ?>" method="post">
+        <select name="addname">
+        <?php
+            foreach ($result_row as &$onerow){
+                echo "<option value=\"".$onerow[1]."\">".$onerow[0]"</option>";
+            }
+        ?>
+        </select>
     </form>
 
 </body>
