@@ -51,7 +51,7 @@
             #add to faves
             $query = "SELECT list_id FROM list WHERE account_id = ".$_SESSION['account_id']." AND name = \"favorites\";";
             $result = mysql_query($query);
-            if($result = mysql_fetch_row($result)){
+            if(!$result = mysql_fetch_row($result)){
                 echo "B-I-T-C-H<br />";
             }
             else{
