@@ -48,6 +48,7 @@
                 echo "<option value=\"".$result_row[1]."\">".$result_row[0]."</option>";
             }
         ?>
+        <input name="addto" type="submit" value="Add" />
         </select>
     </form>
 
