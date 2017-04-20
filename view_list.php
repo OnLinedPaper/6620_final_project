@@ -36,6 +36,9 @@
         <form action="view_list.php?id=<?php echo $_GET['id'] ?>" method="post">
             <select name="viewname">
             <?php
+                $result_row = mysql_fetch_row($result);
+                #pass the empty row
+                
                 while($result_row = mysql_fetch_row($result)){
                     echo "<option value=\"".$result_row[1]."\">".$result_row[0]."</option>";
                 }
