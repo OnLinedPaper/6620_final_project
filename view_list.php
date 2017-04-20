@@ -14,13 +14,13 @@
 
         if(isset($_POST['view'])){
             #view list
-            $query = "SELECT name FROM list WHERE list_id = ".$_POST['addname']." LIMIT 1";
+            $query = "SELECT name FROM list WHERE list_id = ".$_POST['viewname']." LIMIT 1";
             #get list name
             $result = mysql_query($query);
             $result_row = mysql_fetch_row($result);
             $list_name = $result_row[0];
 
-            $query = "SELECT media_id FROM list WHERE list_id = ".$_POST['addname'];
+            $query = "SELECT media_id FROM list WHERE list_id = ".$_POST['viewname'];
             $result = mysql_query($query);
 
             while($result_row = mysql_fetch_row($result)){
