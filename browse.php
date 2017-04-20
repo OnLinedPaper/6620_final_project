@@ -176,6 +176,10 @@ function saveDownload(id)
                 <!--file download link-->
                 <a href="<?php echo str_replace(' ', '+', $filenpath);?>" download>Download</a>
             </td>
+            <td>
+                <!--list add link-->
+                <a href="list.php?id=<?php echo $mediaid ?>">Add to list</a>
+            </td>
         </tr>
             <?php
                 }

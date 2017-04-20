@@ -15,4 +15,5 @@ CREATE TABLE comments(media_id INT, account_id INT, comment VARCHAR(2000));
 CREATE TABLE media_metadata(media_id INT, keyword VARCHAR(40) PRIMARY KEY (media_id, keyword));
 
 CREATE TABLE favourite(account_id INT NOT NULL, media_id INT NOT NULL, PRIMARY KEY(account_id, media_id), FOREIGN KEY(account_id) REFERENCES account(account_id) ON DELETE CASCADE, FOREIGN KEY(media_id) REFERENCES media(media_id) ON DELETE CASCADE);
- 
+
+CREATE TABLE list(entry_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, list_id INTEGER, account_id INTEGER, media_id INTEGER, name VARCHAR(40));
