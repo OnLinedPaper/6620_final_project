@@ -40,9 +40,6 @@
         {
             echo "That username is taken already.";
         }
-        else if(!preg_match('@', $_POST['email'])){
-            echo "<b>email is invalid</b><br />";
-        }
         else{
             if($_POST['password1'] == "") {
                 #they didn't want to change their password
@@ -60,8 +57,8 @@
                 $new_username = $_POST['username'];
             }
 
-            if($_POST['email'] == "") {
-                #they didn't want to change their email
+            if($_POST['email'] == "" or !strpos("@", $_POST['email'])) {
+                #they didn't want to change their email or entered a bad one
                 $new_email = $curr_email;
             }
             else {
