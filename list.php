@@ -43,7 +43,7 @@
             $query = $query.$_POST['addname'].", ";
             $query = $query.$_SESSION['account_id'].", ";
             $query = $query.$_GET['id'].", ";
-            $query = $query.$list_name.");";
+            $query = $query."\"".$list_name."\");";
 
             echo $query.": P-H-U-K-K-A<br />";
         }
