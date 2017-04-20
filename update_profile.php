@@ -40,6 +40,9 @@
         {
             echo "That username is taken already.";
         }
+        else if(!strpos("@", $_POST['email'])){
+            $register_error = "email is invalid";
+        }
         else{
             if($_POST['password1'] == "") {
                 #they didn't want to change their password
