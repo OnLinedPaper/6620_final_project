@@ -36,7 +36,7 @@
             #get list name
             $result = mysql_query($query);
             $result_row = mysql_fetch_row($result);
-            $list_name = $result_row[0]
+            $list_name = $result_row[0];
             echo $list_name.": S-H-I-T<br />";
 
             $query = "INSERT INTO list(list_id, account_id, media_id, name) VALUES(";
