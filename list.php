@@ -51,7 +51,7 @@
             #add to faves
             $query = "SELECT list_id FROM list WHERE account_id = ".$_SESSION['account_id']." AND name = \"favorites\";";
             $result = mysql_query($query);
-            if(!$result = mysql_fetch_row($result)){
+            if(!$result_row = mysql_fetch_row($result)){
                 #create the table if it's not there
                 $query = "INSERT INTO list(account_id, name) VALUES(".$_SESSION['account_id'].", \"favorites\");";
                 $result = mysql_query($query);
