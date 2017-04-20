@@ -71,6 +71,9 @@
             $query = $query.$_GET['id'].", ";
             $query = $query."\"favorites\");";
 
+            $result = mysql_query($query);
+            echo "<b>Added to favorites.</b><br />";
+
         }
     ?>
 
