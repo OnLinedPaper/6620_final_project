@@ -22,8 +22,6 @@
 
             $query = "SELECT DISTINCT list.media_id, media.name FROM list JOIN media ON list.media_id = media.media_id WHERE list_id = ".$_POST['viewname'];
             $result = mysql_query($query);
-            $result_row = mysql_fetch_row($result);
-            #skip the empty result
 
             while($result_row = mysql_fetch_row($result)){
                 echo "<a href=\"media.php?id=".$result_row[0]."\" target=\"_blank\">$result_row[1]</a><br />";
