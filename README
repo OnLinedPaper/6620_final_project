@@ -1,1 +1,65 @@
-TODO: get uploaded media to display and download properly
+METUBE G6
+
+Nicholas Reed
+Ashwini Aras
+
+To use metube, follow these instructions:
+
+Upon arrival, click "register" to get an account
+- enter a username under 40 characters
+- enter an email under 40 characters. must include an @ symbol.
+- enter a password under 40 characters.
+- re-enter password.
+
+If you already have an account, click "log in"
+- enter your username
+- enter your password
+
+
+From the browse page:
+- click "your profile" to go to your profile
+- click "update profile" to update your profile
+- click "view lists" to view your lists
+- click "upload file" to upload a file
+
+- use the keywords box to search media by keywords
+- use the dropdown menus to search by media category, or by most recently updated/most viewed
+
+- click on a media's name to view it in a new tab
+- click on a row's username to go to that user's profile, and see what else they've uploaded
+- click on "Download" to download the file
+- click on "Add to list" to add it to your playlists, or your favorites
+
+
+From a profile page (not yours):
+- click "Back to browse" to go back to browse
+- adjust the contact, friend.foe, block, and media block, then click "submit" to save your settings
+- view the user's uploaded media. it works the same way as in browse: click the name to see the file, and "(download)" to download the file
+
+
+From the update profile page:
+- click "Back to browse" to go back to browse
+- enter a new username, email, or passwords. you can do them in any order you like; if you leave a form blank, it won't change.
+- enter your old password and click "Submit" to save your changes.
+
+
+From the view lists page:
+- click "Back to browse" to go back to browse
+- select one of your playlists from the drop-down menu and click "view" to view the media in it.
+- click the media's name to view it.
+
+
+From the media page:
+- at the top, see the picture's name, upload time, and views.
+- Click "Download" to download the picture.
+- at the bottom, type a comment and click "submit comment" to submit it. (comment can't be empty or whitespace)
+
+
+From the add to list page:
+- click "Back to browse" to go back to browse
+- enter a new playlist name in the box and click "create" to create it (can't be an empty name or all whitespace)
+- select the list you want to add to from the drop-down menu and click "add" to add it
+- click "Favorite" to add the media to your favorites
+
+
+Enjoy! :)
